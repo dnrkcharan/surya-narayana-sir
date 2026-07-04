@@ -17,3 +17,12 @@ Open `index.html` in a browser, or serve this folder with any static server.
 ```bash
 python3 -m http.server 8000
 ```
+
+## Vercel
+
+The repo includes `vercel.json`, which runs `npm run build` and serves the generated
+`dist` folder. This keeps the deployment independent of dashboard framework guesses.
+
+```bash
+npm run build
+```
