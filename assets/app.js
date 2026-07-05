@@ -71,7 +71,13 @@
     const target = Number(counter.dataset.countTarget || 0);
     const duration = Math.min(1800, Math.max(900, target * 10));
     const start = performance.now();
+    const statCard = counter.closest(".stat-card");
+
     counter.dataset.counting = "true";
+    if (statCard) {
+      statCard.classList.remove("count-complete");
+      statCard.classList.add("is-counting");
+    }
 
     function tick(now) {
       const elapsed = now - start;
@@ -85,6 +91,11 @@
       } else {
         setCounterValue(counter, target);
         counter.dataset.counting = "false";
+        if (statCard) {
+          statCard.classList.remove("is-counting");
+          statCard.classList.add("count-complete");
+          window.setTimeout(() => statCard.classList.remove("count-complete"), 1400);
+        }
       }
     }
 
@@ -103,12 +114,44 @@
             animateCounter(entry.target);
           } else {
             setCounterValue(entry.target, 0);
+            const statCard = entry.target.closest(".stat-card");
+            if (statCard) {
+              statCard.classList.remove("is-counting", "count-complete");
+            }
           }
         });
       }, { threshold: 0.55 });
 
       counters.forEach((counter) => counterObserver.observe(counter));
     }
+  }
+
+  const backToTop = document.querySelector("[data-back-to-top]");
+
+  if (backToTop) {
+    let scrollTicking = false;
+
+    function updateBackToTop() {
+      const isVisible = window.scrollY > 420;
+      backToTop.classList.toggle("is-visible", isVisible);
+      backToTop.setAttribute("aria-hidden", String(!isVisible));
+      backToTop.tabIndex = isVisible ? 0 : -1;
+      scrollTicking = false;
+    }
+
+    function requestBackToTopUpdate() {
+      if (!scrollTicking) {
+        window.requestAnimationFrame(updateBackToTop);
+        scrollTicking = true;
+      }
+    }
+
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" });
+    });
+
+    window.addEventListener("scroll", requestBackToTopUpdate, { passive: true });
+    updateBackToTop();
   }
 
   const contactForm = document.querySelector("[data-contact-form]");
