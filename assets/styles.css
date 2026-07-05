@@ -794,6 +794,8 @@ ul {
   border: 1px solid rgba(230, 234, 240, 0.95);
   border-radius: 8px;
   box-shadow: var(--soft-shadow);
+  display: flex;
+  flex-direction: column;
   min-height: 235px;
   padding: 18px 16px 20px;
   position: relative;
@@ -868,6 +870,7 @@ ul {
   color: var(--navy);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 0.98rem;
+  min-height: 42px;
   margin-bottom: 8px;
 }
 
@@ -886,10 +889,10 @@ ul {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  height: 74px;
+  height: 82px;
   justify-content: center;
-  margin-top: 18px;
-  padding: 12px;
+  margin-top: auto;
+  padding: 12px 10px;
   transition: border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
   width: 100%;
 }
@@ -901,26 +904,34 @@ ul {
 }
 
 .institution-logo img {
-  max-height: 38px;
+  max-height: 40px;
   max-width: 100%;
   object-fit: contain;
 }
 
 .institution-logo span {
   color: #41516a;
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 900;
   letter-spacing: 0;
-  line-height: 1;
+  line-height: 1.12;
+  min-height: 16px;
+  text-align: center;
+}
+
+.institution-logo-mark {
+  background: linear-gradient(145deg, #061f3c, #0b2d52);
+  border-color: rgba(243, 191, 90, 0.34);
 }
 
 .institution-logo-mark img {
   height: 34px;
+  opacity: 0.95;
   width: 34px;
 }
 
 .institution-logo-mark span {
-  color: var(--navy);
+  color: #ffffff;
   font-size: 0.78rem;
   line-height: 1.05;
   text-align: center;
@@ -1077,6 +1088,12 @@ ul {
   grid-template-columns: 138px minmax(0, 1fr);
 }
 
+.article-list img {
+  background: #ffffff;
+  border: 1px solid rgba(201, 149, 47, 0.24);
+  box-shadow: 0 10px 24px rgba(18, 33, 58, 0.08);
+}
+
 .event-list {
   display: grid;
   gap: 22px;
@@ -1084,6 +1101,7 @@ ul {
 }
 
 .event-list li {
+  align-items: start;
   grid-template-columns: 42px minmax(0, 1fr);
 }
 
@@ -1093,15 +1111,17 @@ ul {
   border: 1px solid #cddfdc;
   border-radius: 8px;
   color: var(--teal);
-  display: inline-flex;
+  display: grid;
   height: 42px;
   justify-content: center;
+  margin-top: 2px;
+  place-items: center;
   width: 42px;
 }
 
 .event-icon svg {
-  height: 24px;
-  width: 24px;
+  height: 23px;
+  width: 23px;
 }
 
 .full-button {
@@ -1113,26 +1133,68 @@ ul {
 }
 
 .research-feature-section .research-card {
+  align-items: center;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(243, 191, 90, 0.18), transparent 32%),
+    linear-gradient(135deg, #ffffff 0%, #ffffff 48%, #f4faf9 100%);
   display: grid;
-  gap: 26px;
-  grid-template-columns: minmax(0, 0.9fr) minmax(480px, 1.1fr) auto;
-  padding: 30px;
+  gap: 28px;
+  grid-template-columns: minmax(280px, 0.92fr) minmax(0, 1.08fr);
+  padding: 32px;
 }
 
-.research-feature-section .section-kicker,
-.research-feature-section h2 {
+.research-copy {
   grid-column: 1;
+  position: relative;
+  z-index: 1;
 }
 
 .research-feature-section .research-actions {
   grid-column: 2;
   margin-bottom: 0;
+  position: relative;
+  z-index: 1;
 }
 
 .research-feature-section .button {
   align-self: end;
-  grid-column: 3;
+  grid-column: 2;
+  justify-self: start;
   white-space: nowrap;
+  z-index: 1;
+}
+
+.research-summary {
+  color: #41516a;
+  font-size: 0.96rem;
+  margin-bottom: 18px;
+}
+
+.research-proof {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.research-proof span {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(230, 234, 240, 0.95);
+  border-radius: 8px;
+  color: #41516a;
+  display: grid;
+  font-size: 0.74rem;
+  font-weight: 800;
+  line-height: 1.25;
+  min-height: 76px;
+  padding: 12px;
+}
+
+.research-proof strong {
+  color: var(--navy);
+  display: block;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.45rem;
+  line-height: 1;
 }
 
 .updates-grid {
@@ -1151,27 +1213,38 @@ ul {
 }
 
 .research-card h2 {
-  font-size: 1.52rem;
-  margin-bottom: 24px;
+  font-size: 1.9rem;
+  margin-bottom: 16px;
 }
 
 .research-actions {
   display: grid;
-  gap: 14px;
+  gap: 12px;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   margin-bottom: 26px;
 }
 
 .research-actions a {
   align-items: center;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(230, 234, 240, 0.98);
+  border-radius: 8px;
   color: var(--navy);
   display: grid;
   font-size: 0.88rem;
   font-weight: 900;
   gap: 9px;
   justify-items: center;
-  min-height: 112px;
+  min-height: 126px;
+  padding: 16px 12px;
   text-align: center;
+  transition: border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
+}
+
+.research-actions a:hover {
+  border-color: rgba(201, 149, 47, 0.38);
+  box-shadow: 0 14px 32px rgba(18, 33, 58, 0.1);
+  transform: translateY(-3px);
 }
 
 .research-actions span {
@@ -1247,8 +1320,11 @@ ul {
 }
 
 .contact-section {
-  background: radial-gradient(circle at 20% 10%, rgba(201, 149, 47, 0.16), transparent 26%),
-    linear-gradient(135deg, var(--navy), #041429);
+  background:
+    radial-gradient(circle at 18% 14%, rgba(243, 191, 90, 0.24), transparent 28%),
+    radial-gradient(circle at 82% 8%, rgba(255, 255, 255, 0.12), transparent 24%),
+    linear-gradient(135deg, #0b3d46 0%, #0d5a62 48%, #08334d 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   color: #fff;
   display: grid;
   gap: 48px;
@@ -1284,8 +1360,13 @@ ul {
 }
 
 .contact-form {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  box-shadow: 0 24px 60px rgba(3, 18, 34, 0.18);
   display: grid;
   gap: 12px;
+  padding: 22px;
 }
 
 .form-row {
@@ -1399,7 +1480,7 @@ ul {
   box-shadow: 0 16px 40px rgba(6, 31, 60, 0.24), 0 0 24px rgba(243, 191, 90, 0.28);
   color: var(--navy);
   cursor: pointer;
-  display: inline-flex;
+  display: grid;
   height: 50px;
   justify-content: center;
   opacity: 0;
@@ -1410,11 +1491,13 @@ ul {
   transition: opacity 220ms ease, transform 220ms ease, box-shadow 220ms ease;
   width: 50px;
   z-index: 80;
+  place-items: center;
 }
 
 .back-to-top svg {
-  height: 24px;
-  width: 24px;
+  height: 25px;
+  transform: translateY(-1px);
+  width: 25px;
 }
 
 .back-to-top.is-visible {
@@ -2012,6 +2095,16 @@ ul {
     grid-column: 2;
   }
 
+  .timeline-item h3 {
+    min-height: 0;
+  }
+
+  .institution-logo {
+    height: auto;
+    margin-top: 8px;
+    min-height: 74px;
+  }
+
   .profile-sidebar {
     position: static;
   }
@@ -2126,6 +2219,14 @@ ul {
 
   .research-actions {
     grid-template-columns: 1fr;
+  }
+
+  .research-proof {
+    grid-template-columns: 1fr;
+  }
+
+  .research-feature-section .research-card {
+    padding: 20px;
   }
 
   .contact-section,
