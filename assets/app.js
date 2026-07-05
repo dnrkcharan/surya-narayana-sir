@@ -19,6 +19,45 @@
   }
 
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const navLinks = nav ? Array.from(nav.querySelectorAll("a")) : [];
+  const sectionLinks = navLinks
+    .map((link) => {
+      const hash = new URL(link.href, window.location.href).hash;
+      const section = hash ? document.querySelector(hash) : null;
+      return section ? { link, section } : null;
+    })
+    .filter(Boolean);
+
+  if (sectionLinks.length) {
+    let activeSectionId = "";
+
+    function setActiveNav(sectionId) {
+      if (!sectionId || sectionId === activeSectionId) return;
+      activeSectionId = sectionId;
+      navLinks.forEach((link) => {
+        const hash = new URL(link.href, window.location.href).hash;
+        link.classList.toggle("is-active", hash === `#${sectionId}`);
+      });
+    }
+
+    if ("IntersectionObserver" in window) {
+      const navObserver = new IntersectionObserver((entries) => {
+        const visibleEntry = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+        if (visibleEntry) {
+          setActiveNav(visibleEntry.target.id);
+        }
+      }, { rootMargin: "-35% 0px -52% 0px", threshold: [0.1, 0.28, 0.5] });
+
+      sectionLinks.forEach(({ section }) => navObserver.observe(section));
+    }
+
+    const initialHash = window.location.hash;
+    const initialSection = sectionLinks.find(({ section }) => `#${section.id}` === initialHash);
+    setActiveNav((initialSection || sectionLinks[0]).section.id);
+  }
 
   const revealTargets = document.querySelectorAll([
     ".stats-band",
