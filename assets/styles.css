@@ -747,6 +747,54 @@ ul {
   margin-bottom: 0;
 }
 
+.institution-logo {
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid rgba(230, 234, 240, 0.95);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  height: 74px;
+  justify-content: center;
+  margin-top: 18px;
+  padding: 12px;
+  transition: border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
+  width: 100%;
+}
+
+.institution-logo:hover {
+  border-color: rgba(201, 149, 47, 0.5);
+  box-shadow: 0 14px 30px rgba(18, 33, 58, 0.12);
+  transform: translateY(-2px);
+}
+
+.institution-logo img {
+  max-height: 38px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.institution-logo span {
+  color: #41516a;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+.institution-logo-mark img {
+  height: 34px;
+  width: 34px;
+}
+
+.institution-logo-mark span {
+  color: var(--navy);
+  font-size: 0.78rem;
+  line-height: 1.05;
+  text-align: center;
+}
+
 .reveal-on-scroll {
   opacity: 0;
   transform: translateY(26px);
@@ -907,10 +955,37 @@ ul {
   width: 100%;
 }
 
-.lower-grid {
+.research-feature-section {
+  padding-top: 48px;
+}
+
+.research-feature-section .research-card {
+  display: grid;
+  gap: 26px;
+  grid-template-columns: minmax(0, 0.9fr) minmax(480px, 1.1fr) auto;
+  padding: 30px;
+}
+
+.research-feature-section .section-kicker,
+.research-feature-section h2 {
+  grid-column: 1;
+}
+
+.research-feature-section .research-actions {
+  grid-column: 2;
+  margin-bottom: 0;
+}
+
+.research-feature-section .button {
+  align-self: end;
+  grid-column: 3;
+  white-space: nowrap;
+}
+
+.updates-grid {
   display: grid;
   gap: 24px;
-  grid-template-columns: 1.15fr 1fr 0.85fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   padding-bottom: 64px;
 }
 
@@ -1509,12 +1584,19 @@ ul {
     grid-column: 1 / -1;
   }
 
-  .lower-grid {
-    grid-template-columns: 1fr 1fr;
+  .research-feature-section .research-card {
+    grid-template-columns: 1fr;
   }
 
-  .linkedin-card {
-    grid-column: 1 / -1;
+  .research-feature-section .section-kicker,
+  .research-feature-section h2,
+  .research-feature-section .research-actions,
+  .research-feature-section .button {
+    grid-column: auto;
+  }
+
+  .research-feature-section .button {
+    justify-self: start;
   }
 }
 
@@ -1594,6 +1676,7 @@ ul {
 
   .timeline,
   .media-grid,
+  .updates-grid,
   .contact-section,
   .profile-layout,
   .two-column-list,
@@ -1630,12 +1713,9 @@ ul {
   .milestone-label,
   .timeline-period,
   .timeline-item h3,
-  .timeline-item p {
+  .timeline-item p,
+  .institution-logo {
     grid-column: 2;
-  }
-
-  .lower-grid {
-    grid-template-columns: 1fr;
   }
 
   .profile-sidebar {
