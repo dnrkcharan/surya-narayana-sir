@@ -22,6 +22,8 @@
 }
 
 html {
+  max-width: 100%;
+  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
@@ -35,6 +37,8 @@ body {
   font-size: 16px;
   line-height: 1.6;
   letter-spacing: 0;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body.nav-open {
@@ -72,6 +76,7 @@ h1,
 h2,
 h3 {
   line-height: 1.12;
+  overflow-wrap: break-word;
 }
 
 h1,
@@ -2008,12 +2013,18 @@ ul {
   }
 
   .main-nav {
-    background: var(--navy);
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    background:
+      radial-gradient(circle at 80% 0%, rgba(243, 191, 90, 0.16), transparent 28%),
+      linear-gradient(135deg, #061f3c, #041429);
+    border-top: 1px solid rgba(243, 191, 90, 0.18);
+    box-shadow: 0 22px 45px rgba(3, 18, 34, 0.28);
     display: none;
-    gap: 0;
+    gap: 10px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     left: 0;
-    padding: 12px 24px 22px;
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+    padding: 16px;
     position: absolute;
     right: 0;
     top: 100%;
@@ -2024,8 +2035,14 @@ ul {
   }
 
   .main-nav a {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 13px 0;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    display: inline-flex;
+    justify-content: center;
+    min-height: 46px;
+    padding: 10px 8px;
+    text-align: center;
   }
 
   .download-link {
@@ -2160,7 +2177,8 @@ ul {
 
   .hero h1,
   .about-hero h1 {
-    font-size: 2.35rem;
+    font-size: 2.12rem;
+    max-width: 100%;
   }
 
   .hero-tags,
@@ -2250,6 +2268,25 @@ ul {
     grid-template-columns: 1fr;
   }
 
+  .event-list li {
+    grid-template-columns: 64px minmax(0, 1fr);
+  }
+
+  .event-badge {
+    height: 50px;
+    width: 54px;
+  }
+
+  .linkedin-profile,
+  .linkedin-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .linkedin-profile img {
+    height: 150px;
+    width: 150px;
+  }
+
   .research-feature-section .research-card {
     padding: 20px;
   }
@@ -2261,6 +2298,10 @@ ul {
     padding-right: 16px;
   }
 
+  .contact-section {
+    padding-bottom: 84px;
+  }
+
   .about-hero img {
     height: 360px;
   }
@@ -2270,9 +2311,15 @@ ul {
   }
 
   .back-to-top {
-    bottom: 18px;
-    height: 46px;
-    right: 16px;
-    width: 46px;
+    bottom: 12px;
+    height: 40px;
+    right: 12px;
+    width: 40px;
+  }
+
+  .back-to-top svg {
+    height: 20px;
+    transform: none;
+    width: 20px;
   }
 }

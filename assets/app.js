@@ -30,6 +30,7 @@
 
   if (sectionLinks.length) {
     let activeSectionId = "";
+    let activeNavTicking = false;
 
     function setActiveNav(sectionId) {
       if (!sectionId || sectionId === activeSectionId) return;
@@ -40,23 +41,44 @@
       });
     }
 
-    if ("IntersectionObserver" in window) {
-      const navObserver = new IntersectionObserver((entries) => {
-        const visibleEntry = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+    function getCurrentSectionId() {
+      const header = document.querySelector(".site-header");
+      const headerHeight = header ? header.getBoundingClientRect().height : 0;
+      const marker = window.scrollY + headerHeight + Math.min(window.innerHeight * 0.34, 260);
+      const isAtBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 8;
 
-        if (visibleEntry) {
-          setActiveNav(visibleEntry.target.id);
+      if (isAtBottom) {
+        return sectionLinks[sectionLinks.length - 1].section.id;
+      }
+
+      return sectionLinks.reduce((current, item) => {
+        if (item.section.offsetTop <= marker) {
+          return item.section.id;
         }
-      }, { rootMargin: "-35% 0px -52% 0px", threshold: [0.1, 0.28, 0.5] });
+        return current;
+      }, sectionLinks[0].section.id);
+    }
 
-      sectionLinks.forEach(({ section }) => navObserver.observe(section));
+    function updateActiveNav() {
+      setActiveNav(getCurrentSectionId());
+      activeNavTicking = false;
+    }
+
+    function requestActiveNavUpdate() {
+      if (!activeNavTicking) {
+        window.requestAnimationFrame(updateActiveNav);
+        activeNavTicking = true;
+      }
     }
 
     const initialHash = window.location.hash;
     const initialSection = sectionLinks.find(({ section }) => `#${section.id}` === initialHash);
     setActiveNav((initialSection || sectionLinks[0]).section.id);
+    window.addEventListener("scroll", requestActiveNavUpdate, { passive: true });
+    window.addEventListener("resize", requestActiveNavUpdate);
+    window.addEventListener("hashchange", () => window.setTimeout(updateActiveNav, 80));
+    window.addEventListener("load", () => window.setTimeout(updateActiveNav, 120));
+    window.setTimeout(updateActiveNav, 180);
   }
 
   const revealTargets = document.querySelectorAll([
