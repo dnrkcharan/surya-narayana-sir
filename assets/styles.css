@@ -24,7 +24,9 @@
 html {
   max-width: 100%;
   overflow-x: hidden;
+  overflow-x: clip;
   scroll-behavior: smooth;
+  width: 100%;
 }
 
 body {
@@ -38,7 +40,10 @@ body {
   line-height: 1.6;
   letter-spacing: 0;
   max-width: 100%;
+  min-width: 0;
   overflow-x: hidden;
+  overflow-x: clip;
+  width: 100%;
 }
 
 body.nav-open {
@@ -86,6 +91,11 @@ h2 {
 
 ul {
   margin-top: 0;
+}
+
+main {
+  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .site-header {
@@ -309,19 +319,19 @@ ul {
   background: linear-gradient(110deg, #f8fbff 0%, #edf5fb 45%, #dbe9f3 100%);
   min-height: 590px;
   overflow: hidden;
+  overflow: clip;
   position: relative;
 }
 
 .hero::after {
   background: var(--navy);
-  bottom: -74px;
+  bottom: -1px;
+  clip-path: polygon(0 36%, 100% 0, 100% 100%, 0 100%);
   content: "";
-  height: 150px;
-  left: -4%;
+  height: 126px;
+  left: 0;
   position: absolute;
-  transform: rotate(4deg);
-  transform-origin: left bottom;
-  width: 112%;
+  right: 0;
   z-index: 0;
 }
 
@@ -332,6 +342,8 @@ ul {
   background-size: cover;
   inset: 0;
   opacity: 0.38;
+  overflow: hidden;
+  overflow: clip;
   position: absolute;
 }
 
@@ -348,8 +360,9 @@ ul {
   background:
     linear-gradient(112deg, transparent 22%, rgba(255, 255, 255, 0.68) 33%, rgba(243, 191, 90, 0.24) 43%, transparent 58%),
     linear-gradient(72deg, transparent 50%, rgba(45, 109, 106, 0.18), transparent 74%);
+  background-position: -90% 0, 70% 0;
+  background-size: 190% 100%, 160% 100%;
   mix-blend-mode: screen;
-  transform: translateX(-18%);
 }
 
 .hero-bg::after {
@@ -485,6 +498,7 @@ ul {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   overflow: hidden;
+  overflow: clip;
 }
 
 .stat-card {
@@ -494,6 +508,7 @@ ul {
   justify-items: center;
   min-height: 160px;
   overflow: hidden;
+  overflow: clip;
   padding: 22px 16px;
   position: relative;
   text-align: center;
@@ -612,6 +627,7 @@ ul {
 }
 
 .section-image {
+  isolation: isolate;
   position: relative;
 }
 
@@ -619,9 +635,10 @@ ul {
   border: 1px solid rgba(201, 149, 47, 0.5);
   border-radius: 8px;
   content: "";
-  inset: 14px -14px -14px 14px;
+  inset: 14px;
   pointer-events: none;
   position: absolute;
+  transform: translate(10px, 10px);
   z-index: -1;
 }
 
@@ -1836,12 +1853,10 @@ ul {
   100% {
     --header-glow-x: 18%;
     opacity: 0.7;
-    transform: translateX(-4%);
   }
   50% {
     --header-glow-x: 78%;
     opacity: 1;
-    transform: translateX(4%);
   }
 }
 
@@ -1857,12 +1872,12 @@ ul {
 @keyframes heroBeamSweep {
   0%,
   100% {
+    background-position: -90% 0, 70% 0;
     opacity: 0.35;
-    transform: translateX(-20%);
   }
   50% {
+    background-position: 110% 0, 20% 0;
     opacity: 0.9;
-    transform: translateX(12%);
   }
 }
 
@@ -2000,6 +2015,13 @@ ul {
 
   .research-feature-section .button {
     justify-self: start;
+  }
+}
+
+@media (min-width: 901px) {
+  .site-header {
+    overflow-x: hidden;
+    overflow-x: clip;
   }
 }
 
