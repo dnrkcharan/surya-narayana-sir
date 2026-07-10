@@ -341,7 +341,9 @@
 }
 
 .video-feature::after {
-  background: linear-gradient(90deg, rgba(5, 20, 38, 0.82), rgba(5, 20, 38, 0.18));
+  background:
+    linear-gradient(180deg, transparent 32%, rgba(5, 20, 38, 0.3) 62%, rgba(5, 20, 38, 0.82)),
+    linear-gradient(90deg, rgba(5, 20, 38, 0.56), transparent 58%);
   content: "";
   inset: 0;
   position: absolute;
@@ -351,11 +353,11 @@
   color: #fff;
   display: grid;
   gap: 4px;
+  bottom: 34px;
   left: 34px;
   max-width: 280px;
   position: absolute;
   text-transform: uppercase;
-  top: 44px;
   z-index: 1;
 }
 
@@ -1072,8 +1074,8 @@
   }
 
   .video-copy {
+    bottom: 22px;
     left: 22px;
-    top: 28px;
   }
 
   .video-copy strong {
