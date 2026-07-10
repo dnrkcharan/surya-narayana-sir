@@ -31,7 +31,7 @@
 - Fonts and typography: Reference-style serif display headings and compact uppercase nav are implemented. Mobile hero text was adjusted to prevent clipping.
 - Spacing and layout rhythm: Dark hero, floating stats strip, card grids, three-column resources, milestones, gallery/testimonial/contact, CTA band, and footer follow the supplied direction.
 - Colors and visual tokens: Deep navy, white cards, bronze/gold CTAs, and muted academic neutrals match the requested direction.
-- Image quality and asset fidelity: Existing project portrait and media assets are used. The reference screenshot uses a suited portrait, but the available standalone portrait asset in the project is the grey-vest client photo, so this is treated as an accepted source-asset constraint rather than a blocking fidelity issue.
+- Image quality and asset fidelity: Hero background is a light, no-person academic boardroom/campus backdrop so it does not compete with the foreground portrait. Existing project portrait and media assets are used. The reference screenshot uses a suited portrait, but the available standalone portrait asset in the project is the grey-vest client photo, so this is treated as an accepted source-asset constraint rather than a blocking fidelity issue.
 - Copy and content: Homepage content has been reorganized into the requested education-leader structure with consultation CTA, awards, media, blogs, publications, workshops, milestones, gallery, testimonial, and contact surfaces.
 
 **Comparison History**
