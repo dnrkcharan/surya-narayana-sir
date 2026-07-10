@@ -24,7 +24,8 @@
     .map((link) => {
       const hash = new URL(link.href, window.location.href).hash;
       const section = hash ? document.querySelector(hash) : null;
-      return section ? { link, section } : null;
+      const markerElement = section ? section.closest("section[id]") || section : null;
+      return section && markerElement ? { link, section, markerElement } : null;
     })
     .filter(Boolean);
 
@@ -44,19 +45,25 @@
     function getCurrentSectionId() {
       const header = document.querySelector(".site-header");
       const headerHeight = header ? header.getBoundingClientRect().height : 0;
-      const marker = window.scrollY + headerHeight + Math.min(window.innerHeight * 0.34, 260);
+      const marker = window.scrollY + headerHeight + 96;
       const isAtBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 8;
 
       if (isAtBottom) {
         return sectionLinks[sectionLinks.length - 1].section.id;
       }
 
-      return sectionLinks.reduce((current, item) => {
-        if (item.section.offsetTop <= marker) {
-          return item.section.id;
+      let currentSectionId = sectionLinks[0].section.id;
+      let currentSectionTop = -Infinity;
+
+      sectionLinks.forEach((item) => {
+        const sectionTop = item.markerElement.getBoundingClientRect().top + window.scrollY;
+        if (sectionTop <= marker && sectionTop > currentSectionTop + 4) {
+          currentSectionId = item.section.id;
+          currentSectionTop = sectionTop;
         }
-        return current;
-      }, sectionLinks[0].section.id);
+      });
+
+      return currentSectionId;
     }
 
     function updateActiveNav() {
@@ -83,6 +90,17 @@
 
   const revealTargets = document.querySelectorAll([
     ".stats-band",
+    ".about-feature",
+    ".video-feature",
+    ".about-panel",
+    ".expertise-stack article",
+    ".experience-section",
+    ".experience-card",
+    ".awards-media-grid > *",
+    ".resource-column",
+    ".milestone-card",
+    ".lower-grid > *",
+    ".consultation-band",
     ".split-section",
     ".journey-section",
     ".timeline-item",
