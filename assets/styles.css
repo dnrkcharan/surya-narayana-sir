@@ -854,6 +854,32 @@
   color: #25364f;
 }
 
+.linkedin-contact {
+  align-items: center;
+  display: inline-flex;
+  gap: 8px;
+  min-width: 0;
+}
+
+.linkedin-mark {
+  align-items: center;
+  background: #0a66c2;
+  border-radius: 4px;
+  color: #fff;
+  display: inline-flex;
+  flex: 0 0 22px;
+  font-size: 0.76rem;
+  font-weight: 900;
+  height: 22px;
+  justify-content: center;
+  line-height: 1;
+  width: 22px;
+}
+
+.connect-card .contact-list .linkedin-mark {
+  color: #fff;
+}
+
 .site-footer {
   background: #061426;
   grid-template-columns: 1.15fr 0.8fr 0.65fr 1fr;
