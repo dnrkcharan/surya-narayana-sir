@@ -26,6 +26,7 @@
 - Desktop document width: 1440, scrollWidth: 1440.
 - Mobile document width: 390, scrollWidth: 390; no horizontal overflow detected.
 - Mobile experience cards stack cleanly and awards cards remain within the viewport.
+- The lower mobile “Let's Connect” card uses dark navy values on its white surface, keeping location, phone, email, and LinkedIn details readable.
 - Mobile navigation opens with `aria-expanded="true"` and closes correctly.
 - Lazy-loaded award images complete successfully when the Awards section is reached.
 - Browser console errors: none in the desktop or mobile checks.
