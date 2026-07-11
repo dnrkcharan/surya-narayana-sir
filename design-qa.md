@@ -1,45 +1,38 @@
 **Findings**
-- No remaining P0/P1/P2 issues.
+- No remaining P0/P1/P2 issues in the requested Experience and Awards surfaces.
 
 **Source Visual Truth**
-- `/Users/apple/Downloads/WhatsApp Image 2026-07-10 at 16.04.58.jpeg`
+- `/var/folders/3d/99h_pdf90rv9z_l0m9nsnzc40000gn/T/codex-clipboard-e4d3f9b2-1c90-4dd8-9a0b-5c608f29d9c1.png`
+- `/var/folders/3d/99h_pdf90rv9z_l0m9nsnzc40000gn/T/codex-clipboard-6797e7a7-c571-464e-b193-8ed4732c5d3b.png`
 
 **Implementation Evidence**
-- Desktop viewport: `/Users/apple/Documents/Sai sameer/surya-narayana-sir/qa/final-desktop-viewport.png`
-- Mobile viewport: `/Users/apple/Documents/Sai sameer/surya-narayana-sir/qa/final-mobile-viewport.png`
-- Full desktop: `/Users/apple/Documents/Sai sameer/surya-narayana-sir/qa/final-desktop-full.png`
-- Full mobile: `/Users/apple/Documents/Sai sameer/surya-narayana-sir/qa/final-mobile-full.png`
+- Desktop full-page capture: `/Users/apple/Documents/Sai sameer/surya-narayana-sir/qa/awards-experience-desktop-full-stable.png`
+- Desktop viewport capture: `/Users/apple/Documents/Sai sameer/surya-narayana-sir/qa/awards-experience-desktop-viewport-stable.png`
+- Mobile full-page capture: `/Users/apple/Documents/Sai sameer/surya-narayana-sir/qa/awards-experience-mobile-full.png`
+- Mobile Awards focus capture: `/Users/apple/Documents/Sai sameer/surya-narayana-sir/qa/awards-experience-mobile-awards-focused.png`
 - Side-by-side comparison page: `/Users/apple/Documents/Sai sameer/surya-narayana-sir/qa/reference-vs-desktop.html`
 
-**Viewport**
-- Desktop: 1440 x 900, homepage top state.
-- Mobile: 390 x 844, homepage top state.
+**Viewport And State**
+- Desktop: 1440 x 900, homepage loaded, post-animation state.
+- Mobile: 390 x 844, homepage loaded, menu closed for layout checks; menu opened and closed during interaction checks.
+- Awards focus: mobile page scrolled until the Awards section was in view so lazy-loaded artwork could be verified.
 
-**Primary Interactions Tested**
-- Desktop and mobile render through the static server at `http://127.0.0.1:4177/`.
-- Mobile navigation opens correctly.
-- Header active-state logic was checked for Home, About, Experience, Awards, Blogs, and Contact.
-- Count-up stats complete on desktop when visible.
-- Contact form JavaScript syntax and subscribe interaction script parse successfully.
+**Requested Surface Checks**
+- Experience cards: five equal-width desktop cards share a stable 292px card height, aligned title rows, and aligned institution-logo rows. Long role titles wrap without moving the logo baseline.
+- Awards & Recognitions: four generated award images replace placeholder CSS shapes, use a shared image frame, and keep titles and metadata aligned across the grid.
+- Reference direction: the dark academic navigation, light boardroom hero treatment, floating metrics strip, white content panels, bronze accents, and dense academic content hierarchy remain consistent with the supplied direction.
 
-**Console And Overflow Checks**
-- Browser console errors: none in desktop and mobile captures.
+**Responsive And Interaction Checks**
 - Desktop document width: 1440, scrollWidth: 1440.
-- Mobile document width: 390, scrollWidth: 390.
-
-**Required Fidelity Surfaces**
-- Fonts and typography: Reference-style serif display headings and compact uppercase nav are implemented. Mobile hero text was adjusted to prevent clipping.
-- Spacing and layout rhythm: Dark hero, floating stats strip, card grids, three-column resources, milestones, gallery/testimonial/contact, CTA band, and footer follow the supplied direction.
-- Colors and visual tokens: Deep navy, white cards, bronze/gold CTAs, and muted academic neutrals match the requested direction.
-- Image quality and asset fidelity: Hero background is a light, no-person academic boardroom/campus backdrop so it does not compete with the foreground portrait. Existing project portrait and media assets are used. The reference screenshot uses a suited portrait, but the available standalone portrait asset in the project is the grey-vest client photo, so this is treated as an accepted source-asset constraint rather than a blocking fidelity issue.
-- Copy and content: Homepage content has been reorganized into the requested education-leader structure with consultation CTA, awards, media, blogs, publications, workshops, milestones, gallery, testimonial, and contact surfaces.
+- Mobile document width: 390, scrollWidth: 390; no horizontal overflow detected.
+- Mobile experience cards stack cleanly and awards cards remain within the viewport.
+- Mobile navigation opens with `aria-expanded="true"` and closes correctly.
+- Lazy-loaded award images complete successfully when the Awards section is reached.
+- Browser console errors: none in the desktop or mobile checks.
+- `npm run build`, `node --check assets/app.js`, and `git diff --check` passed.
 
 **Comparison History**
-- Initial mobile capture showed the hero name clipping horizontally. Fixed by splitting the name into controlled lines and adding mobile-specific display sizing.
-- Initial nav check showed same-row nested anchors taking active state too early. Fixed by calculating active state from the closest parent section for nested targets.
-- Rebuilt and recaptured after fixes.
-
-**Follow-up Polish**
-- If the client provides the original suited portrait as a standalone file, replace the grey-vest portrait for closer visual fidelity to the reference.
+- The previous experience layout allowed role-title height differences to scatter the institution logos. Fixed with shared card grid rows and a stable logo slot.
+- The previous Awards section used abstract CSS placeholder visuals. Replaced with four consistent, warm academic award images and standardized captions.
 
 final result: passed

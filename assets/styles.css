@@ -467,7 +467,8 @@
   box-shadow: 0 18px 44px rgba(13, 31, 52, 0.07);
   display: grid;
   gap: 12px;
-  min-height: 260px;
+  grid-template-rows: auto minmax(72px, 1fr) 96px;
+  min-height: 292px;
   padding: 22px;
 }
 
@@ -481,13 +482,13 @@
   color: #071b31;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.03rem;
-  min-height: 58px;
+  line-height: 1.25;
+  margin: 0;
 }
 
 .experience-card .institution-logo {
-  align-self: end;
   border-radius: 8px;
-  height: 86px;
+  height: 96px;
   margin: 0;
   min-height: 0;
   padding: 12px;
@@ -528,6 +529,11 @@
   padding: 24px;
 }
 
+.awards-panel,
+.interview-panel {
+  min-height: 420px;
+}
+
 .card-topline {
   align-items: center;
   display: flex;
@@ -565,40 +571,23 @@
   display: grid;
   gap: 10px;
   padding: 10px;
+  transition: border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
 }
 
 .award-visual {
-  align-items: end;
-  background:
-    radial-gradient(circle at 50% 22%, rgba(255, 255, 255, 0.8), transparent 20%),
-    linear-gradient(145deg, #835326, #f1c772 48%, #8c5b2c);
+  background: #f0e7d9;
   border-radius: 7px;
-  color: rgba(255, 255, 255, 0.86);
-  display: grid;
-  font-size: 0.68rem;
-  font-weight: 900;
-  height: 150px;
-  justify-content: center;
-  padding: 12px;
-  text-transform: uppercase;
+  display: block;
+  height: 154px;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
 }
 
-.award-star {
-  background:
-    radial-gradient(circle at 50% 40%, #ffe1a1, #c5893d 38%, #55331c 70%),
-    linear-gradient(145deg, #8a5a2c, #f2c771);
-}
-
-.award-plaque {
-  background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.2), transparent 28%, rgba(255, 255, 255, 0.18)),
-    linear-gradient(145deg, #5b3820, #d6a85d 42%, #f4dfab 58%, #7a4c28);
-}
-
-.award-medal {
-  background:
-    radial-gradient(circle at 50% 42%, #f5df9c 0 24%, #a97936 25% 42%, transparent 43%),
-    linear-gradient(145deg, #7d4f25, #edc474);
+.award-card:hover {
+  border-color: rgba(201, 149, 47, 0.5);
+  box-shadow: 0 16px 30px rgba(13, 31, 52, 0.1);
+  transform: translateY(-4px);
 }
 
 .award-card h3 {
@@ -607,12 +596,14 @@
   font-size: 0.83rem;
   line-height: 1.25;
   margin: 0;
+  min-height: 42px;
 }
 
 .award-card p {
   color: #687386;
   font-size: 0.74rem;
   margin: 0;
+  min-height: 18px;
 }
 
 .media-hero-card {
