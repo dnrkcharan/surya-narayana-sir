@@ -1,35 +1,27 @@
 **Findings**
-- No remaining P0/P1/P2 issues in the refreshed blazer hero, compact navigation, About expertise stack, Experience cards, or mobile menu.
+- No remaining P0/P1/P2 issues in the selected Option 2 chronology, recognition panel, media panel, or mobile navigation.
 
-**Source Visual Truth**
-- Supplied direction reference: `/Users/apple/Downloads/WhatsApp Image 2026-07-10 at 22.28.56.jpeg`
-- Identity and pose source: `/Users/apple/Documents/Sai sameer/surya-narayana-sir/assets/dr-reddy-portrait.jpg`
-- Stage background: `/Users/apple/Documents/Sai sameer/surya-narayana-sir/assets/hero-stage-right.png`
+**Selected Visual Direction**
+- Product Design selection: Option 2, "Editorial Academic Chronicle."
+- The selected direction is preserved as a five-step chronological experience line, followed by a dark Awards & Recognitions panel and a separate light Interviews & Media panel.
 
 **Implementation Evidence**
-- Desktop hero and typography: `/Users/apple/Documents/Sai sameer/surya-narayana-sir/qa/typography-cleanup-desktop.png`
-- Desktop About and expertise stack: `/Users/apple/Documents/Sai sameer/surya-narayana-sir/qa/spacing-cleanup-about-settled.png`
-- Desktop Experience, Awards, and Media: `/Users/apple/Documents/Sai sameer/surya-narayana-sir/qa/spacing-cleanup-experience-settled.png`
-- Mobile hero: `/Users/apple/Documents/Sai sameer/surya-narayana-sir/qa/typography-cleanup-mobile.png`
-
-**Viewport And State**
-- Desktop: 1440 x 900, with the full stage-background hero and settled scroll-reveal state.
-- Mobile: 390 x 844, with the blazer hero and open navigation inspected after scrolling.
+- Mobile Experience and Awards: `/Users/apple/Documents/Sai sameer/surya-narayana-sir/qa/option-2-chronicle-mobile.png`
+- Desktop visual inspection: In-app Browser at 1440 x 1024, including the settled chronology, fully filled award panel, compact media list, and the resource sections directly below.
 
 **Focused Region Checks**
-- The left-side director portrait is now a clean professional navy-blazer cutout, derived from the supplied identity and folded-arms pose. It is blended directly into the hero rather than presented as a separate photo frame.
-- The auditorium/stage background remains in place behind the right-side headline and supports the speaking-leadership direction.
-- Navigation is reduced to the five highest-value destinations: Home, About, Experience, Media, and Research.
-- Manrope handles UI copy and Source Serif 4 handles display typography, producing a coherent, readable type system across desktop and mobile.
-- The About expertise stack uses three equal-height cards, eliminating the unused lower-right gap.
-- Experience cards now have matching content zones and logo tiles, which removes excess vertical space while keeping titles and institution marks aligned.
-- The cool blue and teal accents are used consistently for small labels, interaction states, and CTAs without taking over the editorial page.
+- Experience preserves the original sequence and exact role content: BVRIT, Mohan Babu University, IARE, KG Reddy College, then Vishwa Vishwani Institute of Systems & Management.
+- Every desktop chronology step places the institution mark first, date on the shared rail, and role title below; there are no empty card zones.
+- On mobile, the same five steps remain in order as a compact vertical timeline with an institution tile on the left and date and role on the right.
+- Awards & Recognitions is a dedicated navy editorial panel with four balanced visual awards that fill the available height.
+- Interviews & Media remains a distinct light panel with the primary interview followed by two compact, scannable media entries.
+- The following resource grid begins immediately after the recognition and media panels; no unintended vertical gap remains.
 
 **Interaction And Quality Checks**
-- Desktop horizontal overflow: 0.
-- Mobile horizontal overflow: 0.
-- Mobile menu: visible as a fixed panel from 72px below the sticky header, with five 358px-wide tap targets at a 390px viewport.
-- Hero portrait resolves to `assets/dr-reddy-blazer-cutout.png`; stage background resolves to `assets/hero-stage-right.png`.
+- Desktop horizontal overflow: 0 at 1440 x 1024.
+- Mobile horizontal overflow: 0 at 390 x 844.
+- Mobile menu: visible as a fixed panel beginning 72px below the sticky header; five navigation targets are available after deep scrolling.
+- Mobile menu accessibility: the control updates from `Open navigation` to `Close navigation` and sets `aria-expanded="true"` when open.
 - `npm run build`, `node --check assets/app.js`, and `git diff --check` passed.
 
 final result: passed

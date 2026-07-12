@@ -6,12 +6,14 @@
     const closeNavigation = () => {
       nav.classList.remove("is-open");
       navToggle.setAttribute("aria-expanded", "false");
+      navToggle.setAttribute("aria-label", "Open navigation");
       document.body.classList.remove("nav-open");
     };
 
     navToggle.addEventListener("click", () => {
       const isOpen = nav.classList.toggle("is-open");
       navToggle.setAttribute("aria-expanded", String(isOpen));
+      navToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
       document.body.classList.toggle("nav-open", isOpen);
     });
 
