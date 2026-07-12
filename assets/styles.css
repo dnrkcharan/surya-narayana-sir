@@ -4051,7 +4051,7 @@ body.nav-open {
 }
 
 .hero-reference .hero-bg {
-  background-image: url("hero-stage-director.png");
+  background-image: url("hero-stage-right.png");
   background-position: center;
   background-size: cover;
   filter: saturate(1.08) brightness(0.82);
@@ -4067,14 +4067,37 @@ body.nav-open {
 }
 
 .hero-reference .hero-inner {
-  display: block;
+  display: grid;
+  grid-template-columns: minmax(300px, 0.82fr) minmax(0, 1.18fr);
   max-width: 1320px;
   min-height: 610px;
   padding: 76px clamp(18px, 4vw, 52px) 116px;
 }
 
 .hero-reference .hero-portrait {
+  align-self: end;
+  filter: none;
+  height: 520px;
+  max-width: 420px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-reference .hero-portrait::before {
   display: none;
+}
+
+.hero-reference .hero-portrait img {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  display: block;
+  filter: contrast(1.04) saturate(1.05);
+  mix-blend-mode: normal;
+  object-fit: contain;
+  object-position: center bottom;
+  height: 100%;
+  width: 100%;
 }
 
 .hero-reference .hero-copy {
@@ -4233,22 +4256,23 @@ body.nav-open {
 
 @media (max-width: 900px) {
   .hero-reference .hero-inner {
-    display: block;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
     min-height: 620px;
     padding: 64px 16px 72px;
   }
 
   .hero-reference .hero-bg {
-    background-position: 28% center;
+    background-position: right center;
   }
 
   .hero-reference .hero-copy {
-    margin-left: 0;
+    margin-left: -22px;
     max-width: 100%;
   }
 
   .hero-reference::after {
-    background: linear-gradient(90deg, rgba(3, 18, 55, 0.68) 0%, rgba(3, 18, 55, 0.46) 100%);
+    background: linear-gradient(90deg, rgba(3, 18, 55, 0.22) 0%, rgba(3, 18, 55, 0.48) 100%);
   }
 }
 
@@ -4258,12 +4282,24 @@ body.nav-open {
   }
 
   .hero-reference .hero-inner {
-    min-height: 650px;
+    display: block;
+    min-height: 760px;
     padding: 48px 16px 78px;
   }
 
   .hero-reference .hero-bg {
-    background-position: 22% center;
+    background-position: right center;
+  }
+
+  .hero-reference .hero-portrait {
+    height: 320px;
+    margin: -12px auto -34px 0;
+    max-width: 230px;
+    width: 230px !important;
+  }
+
+  .hero-reference .hero-copy {
+    margin-left: 0;
   }
 
   .hero-reference .hero-specialties {
