@@ -1,36 +1,35 @@
 **Findings**
-- No remaining P0/P1/P2 issues in the redesigned hero, About expertise cards, Experience cards, Awards panel, or mobile navigation surfaces.
+- No remaining P0/P1/P2 issues in the refreshed blazer hero, compact navigation, About expertise stack, Experience cards, or mobile menu.
 
 **Source Visual Truth**
-- Supplied design reference: `/Users/apple/Downloads/WhatsApp Image 2026-07-10 at 22.28.56.jpeg`
-- Identity source: `/Users/apple/Documents/Sai sameer/surya-narayana-sir/assets/dr-reddy-portrait.jpg`
-- Institutional source: `https://www.vishwavishwani.ac.in/vvism/bs-computer-science-in-hyderabad`
+- Supplied direction reference: `/Users/apple/Downloads/WhatsApp Image 2026-07-10 at 22.28.56.jpeg`
+- Identity and pose source: `/Users/apple/Documents/Sai sameer/surya-narayana-sir/assets/dr-reddy-portrait.jpg`
+- Stage background: `/Users/apple/Documents/Sai sameer/surya-narayana-sir/assets/hero-stage-right.png`
 
 **Implementation Evidence**
-- Two-layer desktop hero: `/Users/apple/Documents/Sai sameer/surya-narayana-sir/qa/hero-two-layer-desktop-final.png`
-- Two-layer mobile hero: `/Users/apple/Documents/Sai sameer/surya-narayana-sir/qa/hero-two-layer-mobile-final.png`
-- About and expertise cards: `/Users/apple/Documents/Sai sameer/surya-narayana-sir/qa/about-expertise-desktop-settled.png`
-- Experience and Awards: `/Users/apple/Documents/Sai sameer/surya-narayana-sir/qa/experience-awards-desktop-settled.png`
-- Mobile Experience cards: `/Users/apple/Documents/Sai sameer/surya-narayana-sir/qa/experience-mobile-final.png`
-- Mobile open-menu state after deep scroll: `/Users/apple/Documents/Sai sameer/surya-narayana-sir/qa/mobile-nav-deep-scroll.png`
+- Desktop hero and typography: `/Users/apple/Documents/Sai sameer/surya-narayana-sir/qa/typography-cleanup-desktop.png`
+- Desktop About and expertise stack: `/Users/apple/Documents/Sai sameer/surya-narayana-sir/qa/spacing-cleanup-about-settled.png`
+- Desktop Experience, Awards, and Media: `/Users/apple/Documents/Sai sameer/surya-narayana-sir/qa/spacing-cleanup-experience-settled.png`
+- Mobile hero: `/Users/apple/Documents/Sai sameer/surya-narayana-sir/qa/typography-cleanup-mobile.png`
 
 **Viewport And State**
-- Desktop: 1440 x 900, stable hero, About, and Experience states after scroll-reveal animation settles.
-- Mobile: 390 x 844, stable hero, stacked Experience cards, and deep-scroll menu-open state.
+- Desktop: 1440 x 900, with the full stage-background hero and settled scroll-reveal state.
+- Mobile: 390 x 844, with the blazer hero and open navigation inspected after scrolling.
 
 **Focused Region Checks**
-- The hero now uses two intentional layers: the supplied folded-arms director portrait is cut out and blended into the left side, while a separate auditorium/stage background with a distant speaker supports the right-side headline. The portrait is not rendered inside a photo frame.
-- The duplicate hero consultation button remains removed.
-- Hero specialties use visible checkmark icons and the navbar no longer includes Contact.
-- About expertise cards now use consistent education-focused icons, compact spacing, and a cool cyan accent.
-- Experience cards have reduced empty space, a consistent logo tile, and stack vertically on mobile. The current institution label now matches the official logo: `Vishwa Vishwani Institute of Systems & Management`.
-- Awards and Interviews panels no longer reserve an oversized fixed-height blank area.
+- The left-side director portrait is now a clean professional navy-blazer cutout, derived from the supplied identity and folded-arms pose. It is blended directly into the hero rather than presented as a separate photo frame.
+- The auditorium/stage background remains in place behind the right-side headline and supports the speaking-leadership direction.
+- Navigation is reduced to the five highest-value destinations: Home, About, Experience, Media, and Research.
+- Manrope handles UI copy and Source Serif 4 handles display typography, producing a coherent, readable type system across desktop and mobile.
+- The About expertise stack uses three equal-height cards, eliminating the unused lower-right gap.
+- Experience cards now have matching content zones and logo tiles, which removes excess vertical space while keeping titles and institution marks aligned.
+- The cool blue and teal accents are used consistently for small labels, interaction states, and CTAs without taking over the editorial page.
 
 **Interaction And Quality Checks**
 - Desktop horizontal overflow: 0.
 - Mobile horizontal overflow: 0.
-- Deep-scroll mobile header top: 0; open navigation is fixed from 72px downward.
-- Desktop and mobile hero background resolves to `assets/hero-stage-right.png`; portrait resolves to `assets/dr-reddy-folded-cutout-clean.png`.
-- `npm run build` and `git diff --check` passed.
+- Mobile menu: visible as a fixed panel from 72px below the sticky header, with five 358px-wide tap targets at a 390px viewport.
+- Hero portrait resolves to `assets/dr-reddy-blazer-cutout.png`; stage background resolves to `assets/hero-stage-right.png`.
+- `npm run build`, `node --check assets/app.js`, and `git diff --check` passed.
 
 final result: passed
