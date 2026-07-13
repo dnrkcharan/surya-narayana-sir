@@ -34,10 +34,12 @@
 
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const navLinks = nav ? Array.from(nav.querySelectorAll("a")) : [];
+  const currentPagePath = new URL(window.location.href).pathname;
   const sectionLinks = navLinks
     .map((link) => {
-      const hash = new URL(link.href, window.location.href).hash;
-      const section = hash ? document.querySelector(hash) : null;
+      const targetUrl = new URL(link.href, window.location.href);
+      const hash = targetUrl.hash;
+      const section = targetUrl.pathname === currentPagePath && hash ? document.querySelector(hash) : null;
       const markerElement = section ? section.closest("section[id]") || section : null;
       return section && markerElement ? { link, section, markerElement } : null;
     })

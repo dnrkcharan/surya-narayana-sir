@@ -725,6 +725,18 @@
   width: 100%;
 }
 
+.resource-column--action .document-list {
+  flex: 1 1 auto;
+}
+
+.resource-column--action > .button {
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  margin-top: 24px;
+  min-height: 46px;
+}
+
 .milestones-section {
   padding-top: 32px;
 }
@@ -3877,6 +3889,10 @@ main {
 /* Final overrides: director hero and viewport-safe navigation */
 html {
   overflow-x: clip;
+}
+
+main [id] {
+  scroll-margin-top: 120px;
 }
 
 body,

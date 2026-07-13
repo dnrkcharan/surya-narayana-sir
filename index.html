@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/styles.css?v=20260713-4">
   </head>
   <body>
     <header class="site-header" data-header>
@@ -23,13 +23,13 @@
         <span class="brand-role">Suryanarayana Reddy</span>
       </a>
 
-      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-nav-toggle>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-controls="site-navigation" aria-expanded="false" data-nav-toggle>
         <span></span>
         <span></span>
         <span></span>
       </button>
 
-      <nav class="main-nav" data-nav>
+      <nav class="main-nav" id="site-navigation" data-nav>
         <a href="#home" class="is-active">Home</a>
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
@@ -201,7 +201,7 @@
         <article class="awards-panel">
           <div class="card-topline">
             <h2>Awards &amp; Recognitions</h2>
-            <a href="about.html#honors">View All</a>
+            <a href="about.html#highlights">View All</a>
           </div>
           <div class="award-grid">
             <article class="award-card">
@@ -295,7 +295,7 @@
           </ul>
         </article>
 
-        <article class="resource-column" id="research">
+        <article class="resource-column resource-column--action" id="research">
           <div class="card-topline">
             <h2>Paper Publications</h2>
             <a href="about.html#research-detail">View All</a>
@@ -333,10 +333,10 @@
           <a class="button button-bronze" href="about.html#research-detail">View All Publications</a>
         </article>
 
-        <article class="resource-column">
+        <article class="resource-column resource-column--action">
           <div class="card-topline">
             <h2>Workshops Attended</h2>
-            <a href="about.html#workshops">View All</a>
+            <a href="about.html#certifications">View All</a>
           </div>
           <ul class="document-list">
             <li>
@@ -368,7 +368,7 @@
               </div>
             </li>
           </ul>
-          <a class="button button-bronze" href="about.html#workshops">View All Workshops</a>
+          <a class="button button-bronze" href="about.html#certifications">View All Workshops</a>
         </article>
       </section>
 
@@ -547,6 +547,6 @@
       </svg>
     </button>
 
-    <script src="assets/app.js"></script>
+    <script src="assets/app.js?v=20260713"></script>
   </body>
 </html>
