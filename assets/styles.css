@@ -5000,3 +5000,89 @@ h2,
     height: 204px;
   }
 }
+
+/* Contact refresh: warmer actions, a quieter invitation surface, and an explicit professional profile link. */
+.download-link,
+.button-gold,
+.button-bronze {
+  background: linear-gradient(135deg, #bd8437, #e4b968);
+  border-color: rgba(255, 239, 200, 0.36);
+  box-shadow: 0 10px 22px rgba(91, 59, 25, 0.2);
+  color: #13263d;
+}
+
+.download-link:hover,
+.button-gold:hover,
+.button-bronze:hover {
+  background: linear-gradient(135deg, #d8a653, #f0cf85);
+  box-shadow: 0 14px 26px rgba(91, 59, 25, 0.28);
+  color: #10243a;
+}
+
+.contact-section {
+  background:
+    linear-gradient(115deg, rgba(244, 202, 115, 0.12), transparent 36%),
+    linear-gradient(135deg, #243349 0%, #35435a 52%, #202b3c 100%);
+  border-bottom-color: rgba(244, 202, 115, 0.24);
+}
+
+.contact-copy .section-kicker,
+.contact-list span {
+  color: #ffd36f;
+}
+
+.contact-copy .section-kicker {
+  text-shadow: 0 1px 12px rgba(17, 27, 40, 0.38);
+}
+
+.contact-form {
+  background: #f8fafc;
+  border-color: rgba(255, 219, 141, 0.45);
+  box-shadow: 0 22px 48px rgba(8, 18, 32, 0.26);
+  color: #17304d;
+}
+
+.contact-form span {
+  color: #2d4f73;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: #ffffff;
+  border-color: #cdd9e6;
+  color: #17304d;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #c99540;
+  box-shadow: 0 0 0 3px rgba(201, 149, 64, 0.18);
+  outline: 0;
+}
+
+.contact-form .button-gold {
+  color: #13263d;
+}
+
+.contact-linkedin {
+  color: #ffffff;
+  font-weight: 800;
+}
+
+.contact-linkedin:hover {
+  color: #ffe2a0;
+}
+
+.contact-linkedin .linkedin-mark {
+  color: #ffffff;
+}
+
+@media (max-width: 680px) {
+  .contact-form {
+    padding: 18px;
+  }
+
+  .contact-linkedin {
+    align-items: flex-start;
+  }
+}
