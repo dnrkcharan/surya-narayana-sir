@@ -658,6 +658,8 @@
 .resource-column {
   border-radius: 0;
   box-shadow: none;
+  display: flex;
+  flex-direction: column;
   min-height: 500px;
 }
 
@@ -718,8 +720,8 @@
   width: 46px;
 }
 
-.resource-column .button {
-  margin-top: 22px;
+.resource-column > .button {
+  margin-top: auto;
   width: 100%;
 }
 
