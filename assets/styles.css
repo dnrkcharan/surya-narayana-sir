@@ -5031,6 +5031,19 @@ h2,
   color: #ffd36f;
 }
 
+/* Keep the contact-summary card readable against its light surface. */
+.connect-card .compact-contact > li > span {
+  color: #0a66c2;
+}
+
+.connect-card .compact-contact .linkedin-contact > span:last-child {
+  color: #1c3654;
+}
+
+.connect-card .compact-contact .linkedin-contact:hover > span:last-child {
+  color: #0a66c2;
+}
+
 .contact-copy .section-kicker {
   text-shadow: 0 1px 12px rgba(17, 27, 40, 0.38);
 }
