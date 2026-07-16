@@ -112,10 +112,15 @@
     ".expertise-stack article",
     ".experience-section",
     ".experience-card",
-    ".awards-media-grid > *",
+    ".awards-section",
+    ".awards-panel",
+    ".media-section",
+    ".interview-panel",
     ".resource-column",
     ".milestone-card",
-    ".lower-grid > *",
+    ".testimonials-section",
+    ".testimonial-spotlight",
+    ".testimonial-mini-card",
     ".consultation-band",
     ".split-section",
     ".journey-section",
@@ -219,6 +224,38 @@
 
       counters.forEach((counter) => counterObserver.observe(counter));
     }
+  }
+
+  const testimonialCarousel = document.querySelector("[data-testimonial-carousel]");
+
+  if (testimonialCarousel) {
+    const sources = Array.from(testimonialCarousel.querySelectorAll("[data-testimonial-source]")).map((source) => ({
+      name: source.dataset.name || "Education leader",
+      role: source.dataset.role || "Leadership reference",
+      quote: source.dataset.quote || "Draft testimonial copy awaiting written approval from the institution.",
+    }));
+    const quote = testimonialCarousel.querySelector("[data-testimonial-quote]");
+    const name = testimonialCarousel.querySelector("[data-testimonial-name]");
+    const role = testimonialCarousel.querySelector("[data-testimonial-role]");
+    const previous = testimonialCarousel.querySelector("[data-testimonial-prev]");
+    const next = testimonialCarousel.querySelector("[data-testimonial-next]");
+    let testimonialIndex = 0;
+
+    const showTestimonial = (index) => {
+      if (!sources.length || !quote || !name || !role) return;
+      testimonialIndex = (index + sources.length) % sources.length;
+      const current = sources[testimonialIndex];
+      testimonialCarousel.classList.remove("is-updating");
+      window.requestAnimationFrame(() => {
+        quote.textContent = current.quote;
+        name.textContent = current.name;
+        role.textContent = current.role;
+        testimonialCarousel.classList.add("is-updating");
+      });
+    };
+
+    previous?.addEventListener("click", () => showTestimonial(testimonialIndex - 1));
+    next?.addEventListener("click", () => showTestimonial(testimonialIndex + 1));
   }
 
   const backToTop = document.querySelector("[data-back-to-top]");

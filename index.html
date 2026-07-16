@@ -14,15 +14,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="stylesheet" href="assets/styles.css?v=20260713-4">
+    <link rel="stylesheet" href="assets/styles.css?v=20260716-1">
   </head>
   <body>
-    <header class="site-header" data-header>
-      <a class="brand" href="#home" aria-label="Dr. M.R.S. Suryanarayana Reddy home">
-        <span class="brand-name"><span>Dr.</span> <strong>MRS</strong></span>
-        <span class="brand-role">Suryanarayana Reddy</span>
-      </a>
-
+    <header class="site-header site-header--minimal" data-header>
       <button class="nav-toggle" type="button" aria-label="Open navigation" aria-controls="site-navigation" aria-expanded="false" data-nav-toggle>
         <span></span>
         <span></span>
@@ -33,8 +28,9 @@
         <a href="#home" class="is-active">Home</a>
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
+        <a href="#services">Services</a>
+        <a href="#awards">Awards</a>
         <a href="#media">Media</a>
-        <a href="#research">Research</a>
       </nav>
 
       <a class="download-link" href="#contact">Book a Consultation</a>
@@ -44,10 +40,6 @@
       <section class="hero hero-reference" id="home">
         <div class="hero-bg" aria-hidden="true"></div>
         <div class="hero-inner">
-          <div class="hero-portrait" aria-label="Portrait of Dr. M.R.S. Suryanarayana Reddy">
-            <img src="assets/dr-reddy-blazer-cutout.png" alt="Dr. M.R.S. Suryanarayana Reddy in a formal navy blazer with folded arms">
-          </div>
-
           <div class="hero-copy">
             <p class="eyebrow">Education Leader | Strategist | Speaker</p>
             <h1>
@@ -70,6 +62,10 @@
               <a class="button button-outline-dark" href="https://www.youtube.com/watch?v=2oANLN2soY0" target="_blank" rel="noreferrer">Watch Interview</a>
               <a class="button button-outline-dark" href="assets/dr-mrssn-reddy-cv-2026.pdf" download>Download Profile</a>
             </div>
+          </div>
+
+          <div class="hero-portrait" aria-label="Portrait of Dr. M.R.S. Suryanarayana Reddy">
+            <img src="assets/dr-reddy-blazer-cutout.png" alt="Dr. M.R.S. Suryanarayana Reddy in a formal navy blazer with folded arms">
           </div>
         </div>
       </section>
@@ -132,7 +128,7 @@
           <a class="button button-primary" href="about.html">Know More About Me</a>
         </article>
 
-        <aside class="expertise-stack" id="expertise" aria-label="Core expertise">
+        <aside class="expertise-stack" id="services" aria-label="Core services">
           <article>
             <i class="fa-solid fa-bullseye" aria-hidden="true"></i>
             <strong>Admissions &amp; Recruitment Strategy</strong>
@@ -157,7 +153,6 @@
           <article class="experience-card">
             <a class="institution-logo" href="https://bvrit.ac.in/" target="_blank" rel="noreferrer">
               <img src="assets/institutions/bvrit-logo.webp" alt="BVRIT logo">
-              <strong>BVRIT</strong>
             </a>
             <span>2008 - 2012</span>
             <h3>Assistant Professor</h3>
@@ -165,7 +160,6 @@
           <article class="experience-card">
             <a class="institution-logo" href="https://www.mbu.asia/" target="_blank" rel="noreferrer">
               <img src="assets/institutions/mbu-logo.webp" alt="Mohan Babu University logo">
-              <strong>Mohan Babu University</strong>
             </a>
             <span>2012 - 2019</span>
             <h3>Training Officer &amp; Assistant Professor</h3>
@@ -173,7 +167,6 @@
           <article class="experience-card">
             <a class="institution-logo" href="https://www.iare.ac.in/" target="_blank" rel="noreferrer">
               <img src="assets/institutions/iare-logo.svg" alt="IARE logo">
-              <strong>IARE</strong>
             </a>
             <span>2019 - 2021</span>
             <h3>Dean - Entrepreneur Leadership &amp; Brand Building</h3>
@@ -181,23 +174,21 @@
           <article class="experience-card">
             <a class="institution-logo" href="https://kgr.ac.in/" target="_blank" rel="noreferrer">
               <img src="assets/institutions/kgr-logo.png" alt="KG Reddy College logo">
-              <strong>KG Reddy College</strong>
             </a>
             <span>2021 - 2024</span>
-            <h3>Dean - Admissions &amp; Brand Building</h3>
+            <h3>Associate Professor &amp; Dean - Admissions &amp; Brand Building</h3>
           </article>
           <article class="experience-card">
             <a class="institution-logo institution-logo-vvism" href="https://www.vishwavishwani.ac.in/vvism/bs-computer-science-in-hyderabad" target="_blank" rel="noreferrer">
               <img src="assets/institutions/vishwa-vishwani-vvism-logo.webp" alt="Vishwa Vishwani Institute of Systems and Management logo">
-              <strong>Vishwa Vishwani Institute of Systems &amp; Management</strong>
             </a>
             <span>2024 - Present</span>
-            <h3>Director - Admissions</h3>
+            <h3>Professor &amp; Director - Admissions</h3>
           </article>
         </div>
       </section>
 
-      <section class="awards-media-grid content-shell" id="awards">
+      <section class="awards-section content-shell" id="awards">
         <article class="awards-panel">
           <div class="card-topline">
             <h2>Awards &amp; Recognitions</h2>
@@ -205,60 +196,113 @@
           </div>
           <div class="award-grid">
             <article class="award-card">
-              <img class="award-visual" src="assets/awards/best-business-school-award.png" alt="Gold trophy representing the Telangana Best Business School award" loading="lazy">
+              <span class="award-icon"><i class="fa-solid fa-trophy" aria-hidden="true"></i></span>
               <h3>Telangana Best Business School Director - Admissions</h3>
               <p>2025 | HMTV</p>
             </article>
             <article class="award-card">
-              <img class="award-visual" src="assets/awards/emerging-leader-award.png" alt="Gold star trophy representing the Emerging Leader in Higher Education award" loading="lazy">
+              <span class="award-icon"><i class="fa-solid fa-star" aria-hidden="true"></i></span>
               <h3>Emerging Leader in Higher Education</h3>
               <p>2025 | EK Updesh Media</p>
             </article>
             <article class="award-card">
-              <img class="award-visual" src="assets/awards/innovative-marketing-award.png" alt="Framed gold recognition plaque representing the Most Innovative Marketing Strategy award" loading="lazy">
+              <span class="award-icon"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i></span>
               <h3>Most Innovative Marketing Strategy Award</h3>
               <p>2024 | College Dunia</p>
             </article>
             <article class="award-card">
-              <img class="award-visual" src="assets/awards/distinguished-faculty-award.png" alt="Gold faculty excellence medal representing the Distinguished Faculty award" loading="lazy">
+              <span class="award-icon"><i class="fa-solid fa-medal" aria-hidden="true"></i></span>
               <h3>Distinguished Faculty in Human Resources</h3>
               <p>2024 | Ambitions Awards</p>
             </article>
-          </div>
-        </article>
-
-        <article class="interview-panel" id="media">
-          <div class="card-topline">
-            <h2>Interviews &amp; Media</h2>
-            <a href="about.html#thought-leadership">View All</a>
-          </div>
-          <a class="media-hero-card" href="https://www.youtube.com/watch?v=8OJqmxZ1Hn8" target="_blank" rel="noreferrer">
-            <img src="assets/video-8OJqmxZ1Hn8.jpg" alt="Vishwa Vishwani BS Computer Science programme video" loading="lazy">
-            <span class="media-play">Watch on YouTube</span>
-            <span class="media-video-copy">
-              <strong>BS Computer Science: Four-Year UG Programme</strong>
-              <small>Vishwa Vishwani Institute of Systems &amp; Management | iDream Media</small>
-            </span>
-          </a>
-          <div class="media-thumbs">
-            <a class="media-thumb-link" href="https://www.youtube.com/watch?v=Uh8GpPsZMe4&amp;t=150s" target="_blank" rel="noreferrer">
-              <img src="assets/video-Uh8GpPsZMe4.jpg" alt="Vishwa Vishwani BBA course details video" loading="lazy">
-              <span>BBA Course Details &amp; Career Opportunities</span>
-            </a>
-            <a class="media-thumb-link" href="https://www.youtube.com/watch?v=wgs6ZFo5oYk&amp;t=157s" target="_blank" rel="noreferrer">
-              <img src="assets/video-wgs6ZFo5oYk.jpg" alt="BS Computer Science versus B.Tech CSE guidance video" loading="lazy">
-              <span>BS Computer Science vs B.Tech CSE</span>
-            </a>
-            <a class="media-thumb-link" href="https://www.youtube.com/watch?v=GrBwbjVsmlU" target="_blank" rel="noreferrer">
-              <img src="assets/video-GrBwbjVsmlU.jpg" alt="Vishwa Vishwani PGDM and MBA course guidance video" loading="lazy">
-              <span>PGDM or MBA: Choosing the Right Programme</span>
-            </a>
+            <article class="award-card award-card--draft">
+              <span class="award-icon"><i class="fa-solid fa-building-columns" aria-hidden="true"></i></span>
+              <h3>Institutional Branding Excellence</h3>
+              <p>Draft recognition | Details to confirm</p>
+            </article>
+            <article class="award-card award-card--draft">
+              <span class="award-icon"><i class="fa-solid fa-award" aria-hidden="true"></i></span>
+              <h3>Admissions Innovation Leadership</h3>
+              <p>Draft recognition | Details to confirm</p>
+            </article>
           </div>
         </article>
       </section>
 
-      <section class="resource-grid content-shell" id="blogs">
-        <article class="resource-column">
+      <section class="media-section content-shell" id="media">
+        <article class="interview-panel">
+          <div class="card-topline">
+            <h2>Interviews &amp; Media</h2>
+            <a href="about.html#thought-leadership">View All</a>
+          </div>
+          <div class="media-showcase">
+            <a class="media-hero-card" href="https://www.youtube.com/watch?v=8OJqmxZ1Hn8" target="_blank" rel="noreferrer">
+              <img src="assets/video-8OJqmxZ1Hn8.jpg" alt="Vishwa Vishwani BS Computer Science programme video" loading="lazy">
+              <span class="media-play">Watch on YouTube</span>
+              <span class="media-video-copy">
+                <strong>BS Computer Science: Four-Year UG Programme</strong>
+                <small>Vishwa Vishwani Institute of Systems &amp; Management | iDream Media</small>
+              </span>
+            </a>
+            <div class="media-side-list">
+              <a class="media-thumb-link" href="https://www.youtube.com/watch?v=Uh8GpPsZMe4&amp;t=150s" target="_blank" rel="noreferrer">
+                <img src="assets/video-Uh8GpPsZMe4.jpg" alt="Vishwa Vishwani BBA course details video" loading="lazy">
+                <span>BBA Course Details &amp; Career Opportunities</span>
+              </a>
+              <a class="media-thumb-link" href="https://www.youtube.com/watch?v=wgs6ZFo5oYk&amp;t=157s" target="_blank" rel="noreferrer">
+                <img src="assets/video-wgs6ZFo5oYk.jpg" alt="BS Computer Science versus B.Tech CSE guidance video" loading="lazy">
+                <span>BS Computer Science vs B.Tech CSE</span>
+              </a>
+              <a class="media-thumb-link" href="https://www.youtube.com/watch?v=GrBwbjVsmlU" target="_blank" rel="noreferrer">
+                <img src="assets/video-GrBwbjVsmlU.jpg" alt="Vishwa Vishwani PGDM and MBA course guidance video" loading="lazy">
+                <span>PGDM or MBA: Choosing the Right Programme</span>
+              </a>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="milestones-section content-section">
+        <div class="card-topline centered-topline">
+          <h2>Academic Milestones</h2>
+          <a href="about.html#highlights">View All</a>
+        </div>
+        <div class="milestone-grid">
+          <article class="milestone-card">
+            <span class="milestone-icon"><i class="fa-solid fa-globe" aria-hidden="true"></i></span>
+            <strong>Study India Nodal Officer</strong>
+            <p>Ministry of Education | MBU, 2021 - 2024</p>
+          </article>
+          <article class="milestone-card">
+            <span class="milestone-icon"><i class="fa-solid fa-people-group" aria-hidden="true"></i></span>
+            <strong>Board of Studies Member</strong>
+            <p>Management Studies, three engineering colleges</p>
+          </article>
+          <article class="milestone-card">
+            <span class="milestone-icon"><i class="fa-solid fa-landmark" aria-hidden="true"></i></span>
+            <strong>Academic Council Member</strong>
+            <p>KG Reddy College of Engineering &amp; Technology</p>
+          </article>
+          <article class="milestone-card">
+            <span class="milestone-icon"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i></span>
+            <strong>Advanced Level Certified</strong>
+            <p>Institution Innovation Ambassador, MHRD</p>
+          </article>
+          <article class="milestone-card">
+            <span class="milestone-icon"><i class="fa-solid fa-handshake" aria-hidden="true"></i></span>
+            <strong>Resource Coordinator</strong>
+            <p>AP State Skill Development Corporation</p>
+          </article>
+          <article class="milestone-card">
+            <span class="milestone-icon"><i class="fa-solid fa-file-circle-check" aria-hidden="true"></i></span>
+            <strong>Best Paper Awards</strong>
+            <p>Two international conferences</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="resource-grid content-shell" id="research">
+        <article class="resource-column" id="blogs">
           <div class="card-topline">
             <h2>Latest Blogs</h2>
             <a href="about.html#thought-leadership">View All</a>
@@ -295,7 +339,7 @@
           </ul>
         </article>
 
-        <article class="resource-column resource-column--action" id="research">
+        <article class="resource-column resource-column--action">
           <div class="card-topline">
             <h2>Paper Publications</h2>
             <a href="about.html#research-detail">View All</a>
@@ -372,83 +416,77 @@
         </article>
       </section>
 
-      <section class="milestones-section content-section">
-        <div class="card-topline centered-topline">
-          <h2>Other Academic Milestones</h2>
-          <a href="about.html#highlights">View All</a>
+      <section class="testimonials-section content-shell" id="testimonials" aria-labelledby="testimonials-heading">
+        <div class="testimonials-heading">
+          <p class="section-kicker">Testimonials</p>
+          <h2 id="testimonials-heading">What Education Leaders Say</h2>
+          <p>Perspectives from academic leaders and collaborators across admissions, branding, and institutional growth.</p>
         </div>
-        <div class="milestone-grid">
-          <article class="milestone-card">
-            <span>01</span>
-            <strong>Nodal Officer</strong>
-            <p>Study in India Program, MBU, 2021 - 2024</p>
-          </article>
-          <article class="milestone-card">
-            <span>02</span>
-            <strong>Board of Studies Member</strong>
-            <p>Management Studies, three engineering colleges</p>
-          </article>
-          <article class="milestone-card">
-            <span>03</span>
-            <strong>Academic Council Member</strong>
-            <p>KG Reddy College of Engineering &amp; Technology</p>
-          </article>
-          <article class="milestone-card">
-            <span>04</span>
-            <strong>Advanced Level Certified</strong>
-            <p>Institution Innovation Ambassador, MHRD</p>
-          </article>
-          <article class="milestone-card">
-            <span>05</span>
-            <strong>Resource Coordinator</strong>
-            <p>AP State Skill Development Corporation</p>
-          </article>
-          <article class="milestone-card">
-            <span>06</span>
-            <strong>Best Paper Awards</strong>
-            <p>Two international conferences</p>
-          </article>
-        </div>
-      </section>
 
-      <section class="lower-grid content-shell">
-        <article class="gallery-card">
-          <div class="card-topline">
-            <h2>Photo Gallery</h2>
-            <a href="about.html#highlights">View All</a>
+        <article class="testimonial-spotlight" data-testimonial-carousel aria-live="polite">
+          <div class="testimonial-avatar" aria-hidden="true"><i class="fa-solid fa-user-tie"></i></div>
+          <div class="testimonial-copy">
+            <i class="fa-solid fa-quote-left testimonial-quote-mark" aria-hidden="true"></i>
+            <p data-testimonial-quote>Draft testimonial copy awaiting written approval from the institution.</p>
+            <div class="testimonial-person">
+              <strong data-testimonial-name>CBIT Principal</strong>
+              <span data-testimonial-role>Leadership reference</span>
+            </div>
           </div>
-          <div class="gallery-grid">
-            <img src="assets/media-interview.jpg" alt="Dr. Reddy in an interview">
-            <img src="assets/media-webinar.jpg" alt="Dr. Reddy webinar">
-            <img src="assets/dr-reddy-portrait.jpg" alt="Dr. Reddy portrait">
-            <img src="assets/hero-reference-backdrop.jpg" alt="Academic campus setting">
+          <div class="testimonial-controls" aria-label="Testimonial controls">
+            <button type="button" data-testimonial-prev aria-label="Show previous testimonial"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></button>
+            <button type="button" data-testimonial-next aria-label="Show next testimonial"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+          </div>
+          <div class="testimonial-source-list" hidden>
+            <span data-testimonial-source data-name="CBIT Principal" data-role="Leadership reference" data-quote="Draft testimonial copy awaiting written approval from the institution."></span>
+            <span data-testimonial-source data-name="KG Reddy Principal" data-role="Leadership reference" data-quote="Draft testimonial copy awaiting written approval from the institution."></span>
+            <span data-testimonial-source data-name="MLRH Director" data-role="Leadership reference" data-quote="Draft testimonial copy awaiting written approval from the institution."></span>
+            <span data-testimonial-source data-name="MLRITH Director" data-role="Leadership reference" data-quote="Draft testimonial copy awaiting written approval from the institution."></span>
+            <span data-testimonial-source data-name="Gurmark Principal" data-role="Leadership reference" data-quote="Draft testimonial copy awaiting written approval from the institution."></span>
+            <span data-testimonial-source data-name="Dr. Nagesh" data-role="MBA HOD" data-quote="Draft testimonial copy awaiting written approval from the institution."></span>
+            <span data-testimonial-source data-name="Dr. Shanith" data-role="KLH HOD" data-quote="Draft testimonial copy awaiting written approval from the institution."></span>
+            <span data-testimonial-source data-name="IARE Principal" data-role="Leadership reference" data-quote="Draft testimonial copy awaiting written approval from the institution."></span>
+            <span data-testimonial-source data-name="BVRIT Principal" data-role="Leadership reference" data-quote="Draft testimonial copy awaiting written approval from the institution."></span>
           </div>
         </article>
 
-        <article class="testimonial-card">
-          <div class="card-topline">
-            <h2>Testimonials</h2>
-            <a href="about.html#highlights">View All</a>
-          </div>
-          <blockquote>
-            Dr. Suryanarayana Reddy is a dynamic leader with deep domain expertise in admissions
-            and branding. His strategies have significantly strengthened our institution's growth
-            and visibility.
-          </blockquote>
-          <p>Chairman, Leading Engineering College</p>
-        </article>
+        <div class="testimonial-mini-grid" aria-label="Draft testimonials awaiting approval">
+          <article class="testimonial-mini-card">
+            <span class="testimonial-draft">Draft</span>
+            <i class="fa-solid fa-quote-left" aria-hidden="true"></i>
+            <p>Approved testimonial wording is pending.</p>
+            <strong>KG Reddy Principal</strong>
+            <small>Leadership reference</small>
+          </article>
+          <article class="testimonial-mini-card">
+            <span class="testimonial-draft">Draft</span>
+            <i class="fa-solid fa-quote-left" aria-hidden="true"></i>
+            <p>Approved testimonial wording is pending.</p>
+            <strong>Dr. Nagesh</strong>
+            <small>MBA HOD</small>
+          </article>
+          <article class="testimonial-mini-card">
+            <span class="testimonial-draft">Draft</span>
+            <i class="fa-solid fa-quote-left" aria-hidden="true"></i>
+            <p>Approved testimonial wording is pending.</p>
+            <strong>IARE Principal</strong>
+            <small>Leadership reference</small>
+          </article>
+        </div>
 
-        <article class="connect-card">
-          <div class="card-topline">
-            <h2>Let's Connect</h2>
-          </div>
-          <ul class="contact-list compact-contact">
-            <li><span>Location</span>Hyderabad, Telangana, India</li>
-            <li><span>Phone</span><a href="tel:+919652006074">+91 96520 06074</a></li>
-            <li><span>Email</span><a href="mailto:meetsuryamule@gmail.com">meetsuryamule@gmail.com</a></li>
-            <li><span>LinkedIn</span><a class="linkedin-contact" href="https://www.linkedin.com/in/dr-m-r-s-suryanarayana-reddy/" target="_blank" rel="noreferrer"><span class="linkedin-mark" aria-hidden="true">in</span><span>dr-m-r-s-suryanarayana-reddy</span></a></li>
+        <div class="trusted-institutions" aria-label="Leadership references">
+          <span>Education leadership network</span>
+          <ul>
+            <li>CBIT</li>
+            <li>KG Reddy</li>
+            <li>MLRH</li>
+            <li>MLRITH</li>
+            <li>Gurmark</li>
+            <li>KLH</li>
+            <li>IARE</li>
+            <li>BVRIT</li>
           </ul>
-        </article>
+        </div>
       </section>
 
       <section class="consultation-band" id="contact">
@@ -520,9 +558,9 @@
         <strong>Quick Links</strong>
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
-        <a href="#expertise">Expertise</a>
+        <a href="#services">Services</a>
+        <a href="#awards">Awards</a>
         <a href="#media">Media</a>
-        <a href="#research">Research</a>
       </nav>
       <div class="footer-social">
         <strong>Follow Me</strong>
@@ -547,6 +585,6 @@
       </svg>
     </button>
 
-    <script src="assets/app.js?v=20260713"></script>
+    <script src="assets/app.js?v=20260716-1"></script>
   </body>
 </html>
