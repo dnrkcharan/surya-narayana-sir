@@ -5681,8 +5681,8 @@ h2,
   border-color: var(--line);
   border-radius: 6px;
   gap: 8px;
-  grid-template-rows: auto minmax(42px, 1fr) auto;
-  min-height: 178px;
+  grid-template-rows: 118px minmax(46px, 1fr) auto;
+  min-height: 250px;
   padding: 14px 12px;
 }
 
@@ -5711,6 +5711,15 @@ h2,
   font-size: 0.76rem;
   line-height: 1.28;
   min-height: 0;
+}
+
+.awards-section .award-card .award-visual {
+  border-radius: 4px;
+  display: block;
+  height: 118px;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
 }
 
 .awards-section .award-card p {
@@ -6124,7 +6133,7 @@ h2,
   }
 
   .awards-section .award-card {
-    min-height: 162px;
+    min-height: 238px;
   }
 
   .media-section .media-hero-card,
