@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="stylesheet" href="assets/styles.css?v=20260716-1">
+    <link rel="stylesheet" href="assets/styles.css?v=20260716-2">
   </head>
   <body>
     <header class="site-header site-header--minimal" data-header>
@@ -28,7 +28,7 @@
         <a href="#home" class="is-active">Home</a>
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
-        <a href="#services">Services</a>
+        <a href="services.html">Services</a>
         <a href="#awards">Awards</a>
         <a href="#media">Media</a>
       </nav>
@@ -128,7 +128,7 @@
           <a class="button button-primary" href="about.html">Know More About Me</a>
         </article>
 
-        <aside class="expertise-stack" id="services" aria-label="Core services">
+        <aside class="expertise-stack" aria-label="Core services">
           <article>
             <i class="fa-solid fa-bullseye" aria-hidden="true"></i>
             <strong>Admissions &amp; Recruitment Strategy</strong>
@@ -424,13 +424,16 @@
         </div>
 
         <article class="testimonial-spotlight" data-testimonial-carousel aria-live="polite">
-          <div class="testimonial-avatar" aria-hidden="true"><i class="fa-solid fa-user-tie"></i></div>
+          <div class="testimonial-avatar">
+            <img src="assets/testimonials/representative-leader-1.jpg" alt="Representative academic leader portrait" data-testimonial-image>
+          </div>
           <div class="testimonial-copy">
             <i class="fa-solid fa-quote-left testimonial-quote-mark" aria-hidden="true"></i>
             <p data-testimonial-quote>Draft testimonial copy awaiting written approval from the institution.</p>
             <div class="testimonial-person">
               <strong data-testimonial-name>CBIT Principal</strong>
               <span data-testimonial-role>Leadership reference</span>
+              <small>Representative portrait. Written testimonial pending approval.</small>
             </div>
           </div>
           <div class="testimonial-controls" aria-label="Testimonial controls">
@@ -438,21 +441,22 @@
             <button type="button" data-testimonial-next aria-label="Show next testimonial"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
           </div>
           <div class="testimonial-source-list" hidden>
-            <span data-testimonial-source data-name="CBIT Principal" data-role="Leadership reference" data-quote="Draft testimonial copy awaiting written approval from the institution."></span>
-            <span data-testimonial-source data-name="KG Reddy Principal" data-role="Leadership reference" data-quote="Draft testimonial copy awaiting written approval from the institution."></span>
-            <span data-testimonial-source data-name="MLRH Director" data-role="Leadership reference" data-quote="Draft testimonial copy awaiting written approval from the institution."></span>
-            <span data-testimonial-source data-name="MLRITH Director" data-role="Leadership reference" data-quote="Draft testimonial copy awaiting written approval from the institution."></span>
-            <span data-testimonial-source data-name="Gurmark Principal" data-role="Leadership reference" data-quote="Draft testimonial copy awaiting written approval from the institution."></span>
-            <span data-testimonial-source data-name="Dr. Nagesh" data-role="MBA HOD" data-quote="Draft testimonial copy awaiting written approval from the institution."></span>
-            <span data-testimonial-source data-name="Dr. Shanith" data-role="KLH HOD" data-quote="Draft testimonial copy awaiting written approval from the institution."></span>
-            <span data-testimonial-source data-name="IARE Principal" data-role="Leadership reference" data-quote="Draft testimonial copy awaiting written approval from the institution."></span>
-            <span data-testimonial-source data-name="BVRIT Principal" data-role="Leadership reference" data-quote="Draft testimonial copy awaiting written approval from the institution."></span>
+            <span data-testimonial-source data-name="CBIT Principal" data-role="Leadership reference" data-image="assets/testimonials/representative-leader-1.jpg" data-quote="Draft testimonial copy awaiting written approval from the institution."></span>
+            <span data-testimonial-source data-name="KG Reddy Principal" data-role="Leadership reference" data-image="assets/testimonials/representative-leader-2.jpg" data-quote="Draft testimonial copy awaiting written approval from the institution."></span>
+            <span data-testimonial-source data-name="MLRH Director" data-role="Leadership reference" data-image="assets/testimonials/representative-leader-3.jpg" data-quote="Draft testimonial copy awaiting written approval from the institution."></span>
+            <span data-testimonial-source data-name="MLRITH Director" data-role="Leadership reference" data-image="assets/testimonials/representative-leader-1.jpg" data-quote="Draft testimonial copy awaiting written approval from the institution."></span>
+            <span data-testimonial-source data-name="Gurmark Principal" data-role="Leadership reference" data-image="assets/testimonials/representative-leader-2.jpg" data-quote="Draft testimonial copy awaiting written approval from the institution."></span>
+            <span data-testimonial-source data-name="Dr. Nagesh" data-role="MBA HOD" data-image="assets/testimonials/representative-leader-3.jpg" data-quote="Draft testimonial copy awaiting written approval from the institution."></span>
+            <span data-testimonial-source data-name="Dr. Shanith" data-role="KLH HOD" data-image="assets/testimonials/representative-leader-1.jpg" data-quote="Draft testimonial copy awaiting written approval from the institution."></span>
+            <span data-testimonial-source data-name="IARE Principal" data-role="Leadership reference" data-image="assets/testimonials/representative-leader-2.jpg" data-quote="Draft testimonial copy awaiting written approval from the institution."></span>
+            <span data-testimonial-source data-name="BVRIT Principal" data-role="Leadership reference" data-image="assets/testimonials/representative-leader-3.jpg" data-quote="Draft testimonial copy awaiting written approval from the institution."></span>
           </div>
         </article>
 
         <div class="testimonial-mini-grid" aria-label="Draft testimonials awaiting approval">
           <article class="testimonial-mini-card">
             <span class="testimonial-draft">Draft</span>
+            <img src="assets/testimonials/representative-leader-2.jpg" alt="Representative academic leader portrait">
             <i class="fa-solid fa-quote-left" aria-hidden="true"></i>
             <p>Approved testimonial wording is pending.</p>
             <strong>KG Reddy Principal</strong>
@@ -460,6 +464,7 @@
           </article>
           <article class="testimonial-mini-card">
             <span class="testimonial-draft">Draft</span>
+            <img src="assets/testimonials/representative-leader-3.jpg" alt="Representative academic leader portrait">
             <i class="fa-solid fa-quote-left" aria-hidden="true"></i>
             <p>Approved testimonial wording is pending.</p>
             <strong>Dr. Nagesh</strong>
@@ -467,6 +472,7 @@
           </article>
           <article class="testimonial-mini-card">
             <span class="testimonial-draft">Draft</span>
+            <img src="assets/testimonials/representative-leader-1.jpg" alt="Representative academic leader portrait">
             <i class="fa-solid fa-quote-left" aria-hidden="true"></i>
             <p>Approved testimonial wording is pending.</p>
             <strong>IARE Principal</strong>
@@ -477,14 +483,11 @@
         <div class="trusted-institutions" aria-label="Leadership references">
           <span>Education leadership network</span>
           <ul>
-            <li>CBIT</li>
-            <li>KG Reddy</li>
-            <li>MLRH</li>
-            <li>MLRITH</li>
-            <li>Gurmark</li>
-            <li>KLH</li>
-            <li>IARE</li>
-            <li>BVRIT</li>
+            <li><img src="assets/institutions/bvrit-logo.webp" alt="BVRIT"></li>
+            <li><img src="assets/institutions/mbu-logo.webp" alt="Mohan Babu University"></li>
+            <li><img src="assets/institutions/iare-logo.svg" alt="IARE"></li>
+            <li><img src="assets/institutions/kgr-logo.png" alt="KG Reddy College"></li>
+            <li><img src="assets/institutions/vishwa-vishwani-vvism-logo.webp" alt="Vishwa Vishwani Institute of Systems and Management"></li>
           </ul>
         </div>
       </section>
@@ -558,7 +561,7 @@
         <strong>Quick Links</strong>
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
-        <a href="#services">Services</a>
+        <a href="services.html">Services</a>
         <a href="#awards">Awards</a>
         <a href="#media">Media</a>
       </nav>
@@ -585,6 +588,6 @@
       </svg>
     </button>
 
-    <script src="assets/app.js?v=20260716-1"></script>
+    <script src="assets/app.js?v=20260716-2"></script>
   </body>
 </html>

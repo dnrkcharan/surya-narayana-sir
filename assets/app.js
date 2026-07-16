@@ -232,11 +232,13 @@
     const sources = Array.from(testimonialCarousel.querySelectorAll("[data-testimonial-source]")).map((source) => ({
       name: source.dataset.name || "Education leader",
       role: source.dataset.role || "Leadership reference",
+      image: source.dataset.image || "",
       quote: source.dataset.quote || "Draft testimonial copy awaiting written approval from the institution.",
     }));
     const quote = testimonialCarousel.querySelector("[data-testimonial-quote]");
     const name = testimonialCarousel.querySelector("[data-testimonial-name]");
     const role = testimonialCarousel.querySelector("[data-testimonial-role]");
+    const profileImage = testimonialCarousel.querySelector("[data-testimonial-image]");
     const previous = testimonialCarousel.querySelector("[data-testimonial-prev]");
     const next = testimonialCarousel.querySelector("[data-testimonial-next]");
     let testimonialIndex = 0;
@@ -250,6 +252,7 @@
         quote.textContent = current.quote;
         name.textContent = current.name;
         role.textContent = current.role;
+        if (profileImage && current.image) profileImage.src = current.image;
         testimonialCarousel.classList.add("is-updating");
       });
     };
