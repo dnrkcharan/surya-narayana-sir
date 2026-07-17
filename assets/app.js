@@ -261,6 +261,69 @@
     next?.addEventListener("click", () => showTestimonial(testimonialIndex + 1));
   }
 
+  const mediaPlaylist = document.querySelector("[data-media-playlist]");
+  const mediaFeature = document.querySelector("[data-media-feature]");
+
+  if (mediaPlaylist && mediaFeature) {
+    const mediaItems = Array.from(mediaPlaylist.querySelectorAll("[data-media-item]"));
+    const featureImage = mediaFeature.querySelector("[data-media-feature-image]");
+    const featureTitle = mediaFeature.querySelector("[data-media-feature-title]");
+    const featureSubtitle = mediaFeature.querySelector("[data-media-feature-subtitle]");
+    let mediaIndex = Math.max(0, mediaItems.findIndex((item) => item.classList.contains("is-active")));
+    let rotationTimer = null;
+
+    const showMedia = (index, shouldScroll) => {
+      if (!mediaItems.length || !featureImage || !featureTitle || !featureSubtitle) return;
+      mediaIndex = (index + mediaItems.length) % mediaItems.length;
+      const current = mediaItems[mediaIndex];
+
+      mediaItems.forEach((item, itemIndex) => {
+        const isActive = itemIndex === mediaIndex;
+        item.classList.toggle("is-active", isActive);
+        item.setAttribute("aria-pressed", String(isActive));
+      });
+
+      mediaFeature.href = current.dataset.mediaHref || "#";
+      featureImage.src = current.dataset.mediaImage || "";
+      featureImage.alt = current.dataset.mediaAlt || "Interview video preview";
+      featureTitle.textContent = current.dataset.mediaTitle || "Featured interview";
+      featureSubtitle.textContent = current.dataset.mediaSubtitle || "Watch the full conversation on YouTube";
+
+      if (shouldScroll) {
+        current.scrollIntoView({ behavior: prefersReducedMotion ? "auto" : "smooth", block: "nearest" });
+      }
+    };
+
+    const stopRotation = () => {
+      if (rotationTimer) window.clearInterval(rotationTimer);
+      rotationTimer = null;
+    };
+
+    const startRotation = () => {
+      if (prefersReducedMotion || mediaItems.length < 2) return;
+      stopRotation();
+      rotationTimer = window.setInterval(() => showMedia(mediaIndex + 1, true), 7000);
+    };
+
+    mediaItems.forEach((item, index) => {
+      item.setAttribute("aria-pressed", String(index === mediaIndex));
+      item.addEventListener("click", () => {
+        showMedia(index, true);
+        startRotation();
+      });
+    });
+
+    mediaPlaylist.addEventListener("mouseenter", stopRotation);
+    mediaPlaylist.addEventListener("mouseleave", startRotation);
+    mediaPlaylist.addEventListener("focusin", stopRotation);
+    mediaPlaylist.addEventListener("focusout", (event) => {
+      if (!mediaPlaylist.contains(event.relatedTarget)) startRotation();
+    });
+
+    showMedia(mediaIndex, false);
+    startRotation();
+  }
+
   const backToTop = document.querySelector("[data-back-to-top]");
 
   if (backToTop) {
