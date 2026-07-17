@@ -290,7 +290,14 @@
       featureSubtitle.textContent = current.dataset.mediaSubtitle || "Watch the full conversation on YouTube";
 
       if (shouldScroll) {
-        current.scrollIntoView({ behavior: prefersReducedMotion ? "auto" : "smooth", block: "nearest" });
+        const playlistBounds = mediaPlaylist.getBoundingClientRect();
+        const itemBounds = current.getBoundingClientRect();
+        const nextScrollTop = mediaPlaylist.scrollTop + itemBounds.top - playlistBounds.top - 8;
+
+        mediaPlaylist.scrollTo({
+          top: Math.max(0, nextScrollTop),
+          behavior: prefersReducedMotion ? "auto" : "smooth",
+        });
       }
     };
 
