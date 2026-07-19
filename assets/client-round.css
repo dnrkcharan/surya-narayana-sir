@@ -1955,6 +1955,23 @@ body.modal-open { overflow: hidden; }
   width: 100%;
 }
 
+.services-page .service-card:nth-child(2) .service-card-media img,
+.services-page .service-card:nth-child(3) .service-card-media img,
+.services-page .service-card:nth-child(4) .service-card-media img,
+.services-page .service-card:nth-child(7) .service-card-media img,
+.services-page .service-card:nth-child(9) .service-card-media img {
+  object-position: center 38%;
+}
+
+.services-page .service-card:nth-child(6) .service-card-media img {
+  object-position: center 30%;
+}
+
+.services-page .service-card:nth-child(8) .service-card-media img,
+.services-page .service-card:nth-child(10) .service-card-media img {
+  object-position: center 44%;
+}
+
 .services-page .service-card-icon,
 .services-page .service-card:nth-child(even) .service-card-icon,
 .services-page .service-card--featured .service-card-icon {
