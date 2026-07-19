@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="assets/styles.css?v=20260717-5">
     <link rel="stylesheet" href="assets/media-playlist.css?v=20260717-1">
     <link rel="stylesheet" href="assets/experience-timeline.css?v=20260717-1">
+    <link rel="stylesheet" href="assets/client-round.css?v=20260719-1">
   </head>
   <body>
     <header class="site-header site-header--minimal" data-header>
@@ -30,12 +31,10 @@
         <a href="#home" class="is-active">Home</a>
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
-        <a href="services.html">Services</a>
         <a href="#awards">Awards</a>
         <a href="#media">Media</a>
+        <a href="services.html">Services</a>
       </nav>
-
-      <a class="download-link" href="#contact">Book a Consultation</a>
     </header>
 
     <main>
@@ -43,14 +42,12 @@
         <div class="hero-bg" aria-hidden="true"></div>
         <div class="hero-inner">
           <div class="hero-copy">
-            <p class="eyebrow">Education Leader | Strategist | Speaker</p>
             <h1>
-              <span>Dr. M. R. S.</span>
-              <span>Suryanarayana</span>
-              <span>Reddy</span>
+              <span>Dr. M.R.S.</span>
+              <span>Suryanarayana Reddy</span>
             </h1>
             <p class="hero-tags">
-              End-to-End Consulting for Higher Education Institutions—from Strategy to Admissions, Branding to Digital Transformation, and Growth to Governance.
+              End-to-End Consulting for Higher Education Institutions, from strategy to admissions, branding to digital transformation, and growth to governance.
             </p>
 
             <ul class="hero-specialties" aria-label="Professional focus areas">
@@ -59,48 +56,38 @@
               <li><i class="fa-solid fa-check" aria-hidden="true"></i>Academic Leader</li>
               <li><i class="fa-solid fa-check" aria-hidden="true"></i>Speaker &amp; Researcher</li>
             </ul>
-
-            <div class="hero-actions">
-              <a class="button button-outline-dark" href="https://www.youtube.com/watch?v=2oANLN2soY0" target="_blank" rel="noreferrer">Watch Interview</a>
-              <a class="button button-outline-dark" href="assets/dr-mrssn-reddy-cv-2026.pdf" download>Download Profile</a>
-            </div>
           </div>
 
           <div class="hero-portrait" aria-label="Portrait of Dr. M.R.S. Suryanarayana Reddy">
             <img src="assets/dr-reddy-blazer-cutout.png" alt="Dr. M.R.S. Suryanarayana Reddy in a formal navy blazer with folded arms">
           </div>
+          <a class="button button-gold hero-consultation" href="#contact">Book a Consultation</a>
         </div>
       </section>
 
       <section class="stats-band" aria-label="Profile highlights">
         <div class="stats-grid">
           <article class="stat-card">
-            <span class="stat-icon">01</span>
             <strong data-count-target="18" data-count-suffix="+">0+</strong>
             <span>Years of Experience</span>
           </article>
           <article class="stat-card">
-            <span class="stat-icon">02</span>
             <strong data-count-target="1500" data-count-suffix="+">0+</strong>
             <span>Institutions Connected</span>
           </article>
           <article class="stat-card">
-            <span class="stat-icon">03</span>
             <strong data-count-target="25" data-count-suffix="+">0+</strong>
             <span>MoUs Facilitated</span>
           </article>
           <article class="stat-card">
-            <span class="stat-icon">04</span>
             <strong data-count-target="10" data-count-suffix="+">0+</strong>
             <span>Research Publications</span>
           </article>
           <article class="stat-card">
-            <span class="stat-icon">05</span>
             <strong data-count-target="100" data-count-suffix="+">0+</strong>
             <span>Guest Lectures</span>
           </article>
           <article class="stat-card">
-            <span class="stat-icon">06</span>
             <strong data-count-target="300" data-count-suffix="%">0%</strong>
             <span>Digital Growth Achieved</span>
           </article>
@@ -149,7 +136,6 @@
       <section class="experience-section content-section" id="experience">
         <div class="section-heading">
           <p class="section-kicker">Experience</p>
-          <h2>Progressive roles across teaching, training, branding, admissions, and institutional growth.</h2>
         </div>
         <div class="experience-grid">
           <article class="experience-card">
@@ -208,34 +194,46 @@
           </div>
           <div class="award-grid">
             <article class="award-card">
-              <img class="award-visual" src="assets/awards/best-business-school-award.png" alt="Telangana Best Business School Director award">
-              <h3>Telangana Best Business School Director - Admissions</h3>
-              <p>2025 | HMTV</p>
+              <button class="award-card-trigger" type="button" data-award-trigger data-award-title="Telangana Best Business School Director - Admissions" data-award-year="2025 | HMTV" data-award-image="assets/awards/best-business-school-award.png" data-award-summary="Recognition details will be confirmed with the awarding body. This preview highlights Dr. Reddy's admissions leadership and institutional growth contribution." data-award-points="Award citation and event details to be confirmed|Recognition scope and selection criteria to be confirmed|Supporting photographs and credentials will be added">
+                <img class="award-visual" src="assets/awards/best-business-school-award.png" alt="Telangana Best Business School Director award">
+                <h3>Telangana Best Business School Director - Admissions</h3>
+                <p>2025 | HMTV</p><span>View details</span>
+              </button>
             </article>
             <article class="award-card">
-              <img class="award-visual" src="assets/awards/emerging-leader-award.png" alt="Emerging Leader in Higher Education award">
-              <h3>Emerging Leader in Higher Education</h3>
-              <p>2025 | EK Updesh Media</p>
+              <button class="award-card-trigger" type="button" data-award-trigger data-award-title="Emerging Leader in Higher Education" data-award-year="2025 | EK Updesh Media" data-award-image="assets/awards/emerging-leader-award.png" data-award-summary="Recognition details will be confirmed with the awarding body. This placeholder records the award while the full citation and event material are collected." data-award-points="Award citation and event details to be confirmed|Recognition scope and selection criteria to be confirmed|Supporting photographs and credentials will be added">
+                <img class="award-visual" src="assets/awards/emerging-leader-award.png" alt="Emerging Leader in Higher Education award">
+                <h3>Emerging Leader in Higher Education</h3>
+                <p>2025 | EK Updesh Media</p><span>View details</span>
+              </button>
             </article>
             <article class="award-card">
-              <img class="award-visual" src="assets/awards/innovative-marketing-award.png" alt="Most Innovative Marketing Strategy award">
-              <h3>Most Innovative Marketing Strategy Award</h3>
-              <p>2024 | College Dunia</p>
+              <button class="award-card-trigger" type="button" data-award-trigger data-award-title="Most Innovative Marketing Strategy Award" data-award-year="2024 | College Dunia" data-award-image="assets/awards/innovative-marketing-award.png" data-award-summary="Recognition details will be confirmed with the awarding body. This placeholder captures the award before the official citation and supporting material are supplied." data-award-points="Award citation and event details to be confirmed|Recognition scope and selection criteria to be confirmed|Supporting photographs and credentials will be added">
+                <img class="award-visual" src="assets/awards/innovative-marketing-award.png" alt="Most Innovative Marketing Strategy award">
+                <h3>Most Innovative Marketing Strategy Award</h3>
+                <p>2024 | College Dunia</p><span>View details</span>
+              </button>
             </article>
             <article class="award-card">
-              <img class="award-visual" src="assets/awards/distinguished-faculty-award.png" alt="Distinguished Faculty in Human Resources award">
-              <h3>Distinguished Faculty in Human Resources</h3>
-              <p>2024 | Ambitions Awards</p>
+              <button class="award-card-trigger" type="button" data-award-trigger data-award-title="Distinguished Faculty in Human Resources" data-award-year="2024 | Ambitions Awards" data-award-image="assets/awards/distinguished-faculty-award.png" data-award-summary="Recognition details will be confirmed with the awarding body. This placeholder captures the award while the final citation and supporting evidence are collected." data-award-points="Award citation and event details to be confirmed|Recognition scope and selection criteria to be confirmed|Supporting photographs and credentials will be added">
+                <img class="award-visual" src="assets/awards/distinguished-faculty-award.png" alt="Distinguished Faculty in Human Resources award">
+                <h3>Distinguished Faculty in Human Resources</h3>
+                <p>2024 | Ambitions Awards</p><span>View details</span>
+              </button>
             </article>
             <article class="award-card award-card--draft">
-              <span class="award-icon"><i class="fa-solid fa-building-columns" aria-hidden="true"></i></span>
-              <h3>Institutional Branding Excellence</h3>
-              <p>Draft recognition | Details to confirm</p>
+              <button class="award-card-trigger" type="button" data-award-trigger data-award-title="Institutional Branding Excellence" data-award-year="Recognition details to confirm" data-award-summary="A placeholder recognition entry. The official award name, awarding organization, year, and supporting material will be added when shared." data-award-points="Official award details to be confirmed|Citation and selection criteria to be added|Supporting media to be added">
+                <span class="award-icon"><i class="fa-solid fa-building-columns" aria-hidden="true"></i></span>
+                <h3>Institutional Branding Excellence</h3>
+                <p>Draft recognition | Details to confirm</p><span>View details</span>
+              </button>
             </article>
             <article class="award-card award-card--draft">
-              <span class="award-icon"><i class="fa-solid fa-award" aria-hidden="true"></i></span>
-              <h3>Admissions Innovation Leadership</h3>
-              <p>Draft recognition | Details to confirm</p>
+              <button class="award-card-trigger" type="button" data-award-trigger data-award-title="Admissions Innovation Leadership" data-award-year="Recognition details to confirm" data-award-summary="A placeholder recognition entry. The official award name, awarding organization, year, and supporting material will be added when shared." data-award-points="Official award details to be confirmed|Citation and selection criteria to be added|Supporting media to be added">
+                <span class="award-icon"><i class="fa-solid fa-award" aria-hidden="true"></i></span>
+                <h3>Admissions Innovation Leadership</h3>
+                <p>Draft recognition | Details to confirm</p><span>View details</span>
+              </button>
             </article>
           </div>
         </article>
@@ -340,44 +338,7 @@
         </div>
       </section>
 
-      <section class="resource-grid content-shell" id="research">
-        <article class="resource-column" id="blogs">
-          <div class="card-topline">
-            <h2>Latest Blogs</h2>
-            <a href="about.html#thought-leadership">View All</a>
-          </div>
-          <ul class="story-list">
-            <li>
-              <img src="assets/media-webinar.jpg" alt="Higher education blog">
-              <div>
-                <strong>The Future of Higher Education: Trends Shaping 2030 and Beyond</strong>
-                <span>May 10, 2025</span>
-              </div>
-            </li>
-            <li>
-              <img src="assets/media-interview.jpg" alt="MBA guidance blog">
-              <div>
-                <strong>MBA vs PGDM: Which is the Right Choice for You?</strong>
-                <span>April 27, 2025</span>
-              </div>
-            </li>
-            <li>
-              <img src="assets/hero-reference-backdrop.jpg" alt="Admissions growth blog">
-              <div>
-                <strong>How Institutions Can Build a Strong Admissions Funnel</strong>
-                <span>April 05, 2025</span>
-              </div>
-            </li>
-            <li>
-              <img src="assets/media-newspaper-feature.svg" alt="AI in education blog">
-              <div>
-                <strong>AI in Education: Opportunities for Universities</strong>
-                <span>March 15, 2025</span>
-              </div>
-            </li>
-          </ul>
-        </article>
-
+      <section class="resource-grid resource-grid--academic content-shell" id="research">
         <article class="resource-column resource-column--action">
           <div class="card-topline">
             <h2>Paper Publications</h2>
@@ -452,6 +413,33 @@
             </li>
           </ul>
           <a class="button button-bronze" href="about.html#certifications">View All Workshops</a>
+        </article>
+      </section>
+
+      <section class="insights-grid content-shell" id="blogs">
+        <article class="resource-column">
+          <div class="card-topline">
+            <h2>Latest Blogs</h2>
+            <a href="about.html#thought-leadership">View All</a>
+          </div>
+          <ul class="story-list">
+            <li><img src="assets/media-webinar.jpg" alt="Higher education blog"><div><strong>The Future of Higher Education: Trends Shaping 2030 and Beyond</strong><span>May 10, 2025</span></div></li>
+            <li><img src="assets/media-interview.jpg" alt="MBA guidance blog"><div><strong>MBA vs PGDM: Which is the Right Choice for You?</strong><span>April 27, 2025</span></div></li>
+            <li><img src="assets/hero-reference-backdrop.jpg" alt="Admissions growth blog"><div><strong>How Institutions Can Build a Strong Admissions Funnel</strong><span>April 05, 2025</span></div></li>
+            <li><img src="assets/media-newspaper-feature.svg" alt="AI in education blog"><div><strong>AI in Education: Opportunities for Universities</strong><span>March 15, 2025</span></div></li>
+          </ul>
+        </article>
+        <article class="resource-column future-content-card">
+          <div class="card-topline">
+            <h2>Education Insights</h2>
+            <span>Coming Soon</span>
+          </div>
+          <p>Short, practical notes on enrolment, institutional positioning, leadership, and the evolving student journey.</p>
+          <ul class="future-content-list">
+            <li><i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i>Admissions strategy notes</li>
+            <li><i class="fa-solid fa-building-columns" aria-hidden="true"></i>Institutional growth playbooks</li>
+            <li><i class="fa-solid fa-lightbulb" aria-hidden="true"></i>Leadership and innovation briefs</li>
+          </ul>
         </article>
       </section>
 
@@ -545,12 +533,7 @@
         </div>
       </section>
 
-      <section class="consultation-band" id="contact">
-        <p>Looking to improve admissions, branding, and institutional growth?</p>
-        <a class="button button-gold" href="mailto:meetsuryamule@gmail.com?subject=Consultation%20request">Book a Consultation</a>
-      </section>
-
-      <section class="contact-section">
+      <section class="contact-section" id="contact">
         <div class="contact-copy">
           <p class="section-kicker">Let's Connect</p>
           <h2>Invite Dr. Reddy for speaking engagements, academic collaborations, and institutional growth initiatives.</h2>
@@ -602,37 +585,33 @@
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div>
-        <a class="footer-brand" href="#home">
-          <span>Dr. <strong>MRS</strong></span>
-          <small>Suryanarayana Reddy</small>
-        </a>
-        <p>Education Leader | Strategist | Speaker | Driving institutional growth and academic excellence.</p>
-      </div>
+    <footer class="site-footer site-footer--minimal">
       <nav aria-label="Footer navigation">
-        <strong>Quick Links</strong>
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
-        <a href="services.html">Services</a>
         <a href="#awards">Awards</a>
         <a href="#media">Media</a>
+        <a href="services.html">Services</a>
       </nav>
       <div class="footer-social">
-        <strong>Follow Me</strong>
-        <a href="https://www.linkedin.com/in/dr-m-r-s-suryanarayana-reddy/" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a href="#media">Media</a>
-        <a href="#blogs">Blogs</a>
+        <a href="https://www.linkedin.com/in/dr-m-r-s-suryanarayana-reddy/" target="_blank" rel="noreferrer"><i class="fa-brands fa-linkedin" aria-hidden="true"></i>LinkedIn</a>
       </div>
-      <form class="subscribe-form" data-subscribe-form>
-        <label>
-          <span>Newsletter</span>
-          <input type="email" placeholder="Your email address" required>
-        </label>
-        <button type="submit">Subscribe</button>
-      </form>
       <p class="copyright">Copyright 2026 Dr. M.R.S. Suryanarayana Reddy. All rights reserved.</p>
     </footer>
+
+    <div class="award-modal" data-award-modal aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="award-modal-title">
+      <button class="award-modal-backdrop" type="button" data-award-modal-close aria-label="Close award details"></button>
+      <section class="award-modal-dialog" role="document">
+        <button class="award-modal-close" type="button" data-award-modal-close aria-label="Close award details"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+        <img src="" alt="" data-award-modal-image hidden>
+        <div class="award-modal-copy">
+          <p data-award-modal-year>Recognition details</p>
+          <h2 id="award-modal-title" data-award-modal-title>Award details</h2>
+          <p data-award-modal-summary>Details will be added shortly.</p>
+          <ul data-award-modal-points></ul>
+        </div>
+      </section>
+    </div>
 
     <button class="back-to-top" type="button" aria-label="Back to top" aria-hidden="true" data-back-to-top>
       <svg aria-hidden="true" viewBox="0 0 24 24">

@@ -301,6 +301,26 @@
       }
     };
 
+    const updateYouTubeMetadata = (item) => {
+      const url = item.dataset.mediaHref;
+      if (!url || !window.fetch) return;
+
+      fetch(`https://www.youtube.com/oembed?url=${encodeURIComponent(url)}&format=json`)
+        .then((response) => (response.ok ? response.json() : Promise.reject(new Error("Metadata unavailable"))))
+        .then((metadata) => {
+          if (metadata.title) {
+            item.dataset.mediaTitle = metadata.title;
+            const label = item.querySelector(".media-playlist-thumb + span");
+            if (label) label.textContent = metadata.title;
+          }
+          if (metadata.author_name) item.dataset.mediaSubtitle = metadata.author_name;
+          if (item.classList.contains("is-active")) showMedia(mediaIndex, false);
+        })
+        .catch(() => {
+          // The supplied title is retained when YouTube metadata is unavailable.
+        });
+    };
+
     const stopRotation = () => {
       if (rotationTimer) window.clearInterval(rotationTimer);
       rotationTimer = null;
@@ -314,6 +334,7 @@
 
     mediaItems.forEach((item, index) => {
       item.setAttribute("aria-pressed", String(index === mediaIndex));
+      updateYouTubeMetadata(item);
       item.addEventListener("click", () => {
         showMedia(index, true);
         startRotation();
@@ -329,6 +350,55 @@
 
     showMedia(mediaIndex, false);
     startRotation();
+  }
+
+  const awardModal = document.querySelector("[data-award-modal]");
+
+  if (awardModal) {
+    const modalImage = awardModal.querySelector("[data-award-modal-image]");
+    const modalYear = awardModal.querySelector("[data-award-modal-year]");
+    const modalTitle = awardModal.querySelector("[data-award-modal-title]");
+    const modalSummary = awardModal.querySelector("[data-award-modal-summary]");
+    const modalPoints = awardModal.querySelector("[data-award-modal-points]");
+    let lastTrigger = null;
+
+    const closeAwardModal = () => {
+      awardModal.classList.remove("is-open");
+      awardModal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("modal-open");
+      lastTrigger?.focus();
+    };
+
+    document.querySelectorAll("[data-award-trigger]").forEach((trigger) => {
+      trigger.addEventListener("click", () => {
+        lastTrigger = trigger;
+        const image = trigger.dataset.awardImage || "";
+        if (modalImage) {
+          modalImage.hidden = !image;
+          modalImage.src = image;
+          modalImage.alt = trigger.dataset.awardTitle || "Award";
+        }
+        if (modalYear) modalYear.textContent = trigger.dataset.awardYear || "Recognition details";
+        if (modalTitle) modalTitle.textContent = trigger.dataset.awardTitle || "Award details";
+        if (modalSummary) modalSummary.textContent = trigger.dataset.awardSummary || "Details will be added shortly.";
+        if (modalPoints) {
+          modalPoints.replaceChildren(...(trigger.dataset.awardPoints || "").split("|").filter(Boolean).map((point) => {
+            const item = document.createElement("li");
+            item.textContent = point;
+            return item;
+          }));
+        }
+        awardModal.classList.add("is-open");
+        awardModal.setAttribute("aria-hidden", "false");
+        document.body.classList.add("modal-open");
+        awardModal.querySelector("[data-award-modal-close]")?.focus();
+      });
+    });
+
+    awardModal.querySelectorAll("[data-award-modal-close]").forEach((button) => button.addEventListener("click", closeAwardModal));
+    window.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && awardModal.classList.contains("is-open")) closeAwardModal();
+    });
   }
 
   const backToTop = document.querySelector("[data-back-to-top]");

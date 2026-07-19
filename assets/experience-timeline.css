@@ -70,11 +70,7 @@
 }
 
 .experience-section .experience-detail::before {
-  background: var(--accent);
-  border-radius: 99px;
-  content: "";
-  height: 4px;
-  width: 32px;
+  display: none;
 }
 
 .experience-section .experience-detail span {
@@ -128,17 +124,16 @@
 
   .experience-section .experience-detail {
     align-content: center;
-    border-left: 2px solid #e3f1fa;
     border-top: 0;
     gap: 6px;
-    justify-items: start;
-    margin: 0 0 0 12px;
-    padding: 7px 6px 7px 14px;
+    justify-items: center;
+    margin: 0;
+    padding: 7px 8px;
+    text-align: center;
   }
 
   .experience-section .experience-detail::before {
-    height: 5px;
-    width: 28px;
+    display: none;
   }
 
   .experience-section .experience-detail span {
@@ -162,7 +157,7 @@
   }
 
   .experience-section .experience-detail {
-    margin-left: 9px;
-    padding-left: 11px;
+    margin-left: 0;
+    padding-left: 8px;
   }
 }
