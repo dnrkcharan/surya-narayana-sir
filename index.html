@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="assets/styles.css?v=20260717-5">
     <link rel="stylesheet" href="assets/media-playlist.css?v=20260717-1">
     <link rel="stylesheet" href="assets/experience-timeline.css?v=20260717-1">
-    <link rel="stylesheet" href="assets/client-round.css?v=20260719-4">
+    <link rel="stylesheet" href="assets/client-round.css?v=20260719-7">
   </head>
   <body>
     <header class="site-header site-header--minimal" data-header>
@@ -590,35 +590,63 @@
           </ul>
         </div>
 
-        <form class="contact-form" data-contact-form>
+        <form class="contact-form contact-form--consultation" data-contact-form>
+          <div class="contact-form-intro">
+            <span>Consultation Request</span>
+            <h3>Tell us what your institution needs.</h3>
+            <p>Select a priority and share a little context. Your email app will open with a prepared enquiry.</p>
+          </div>
           <div class="form-row">
             <label>
               <span>Your Name</span>
-              <input type="text" name="name" autocomplete="name" required>
+              <input type="text" name="name" autocomplete="name" placeholder="Full name" required>
             </label>
             <label>
+              <span>College or Institution</span>
+              <input type="text" name="college" autocomplete="organization" placeholder="Institution name" required>
+            </label>
+          </div>
+          <div class="form-row">
+            <label>
               <span>Your Email</span>
-              <input type="email" name="email" autocomplete="email" required>
+              <input type="email" name="email" autocomplete="email" placeholder="name@institution.edu" required>
+            </label>
+            <label>
+              <span>Service Required</span>
+              <select name="service" required>
+                <option value="" selected disabled>Select a service</option>
+                <option>Institutional Growth Strategy</option>
+                <option>Admissions Excellence</option>
+                <option>Institutional Branding</option>
+                <option>Lead Generation and Student Recruitment</option>
+                <option>Website and Digital Experience</option>
+                <option>Marketing and Outreach Strategy</option>
+                <option>Rankings and Institutional Visibility</option>
+                <option>Education Portals and Lead Publishers</option>
+                <option>Student Recruitment Ecosystem</option>
+                <option>Leadership Advisory</option>
+                <option>AI Transformation for Institutions</option>
+                <option>Invite for Panel Discussion</option>
+              </select>
             </label>
           </div>
           <label>
-            <span>Subject</span>
-            <input type="text" name="subject" required>
+            <span>How Can We Help?</span>
+            <textarea name="message" rows="5" placeholder="Share your goals, current challenge, and preferred timeline." required></textarea>
           </label>
-          <label>
-            <span>Message</span>
-            <textarea name="message" rows="5" required></textarea>
-          </label>
-          <button class="button button-gold" type="submit">Send Message</button>
+          <button class="button button-gold" type="submit"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i>Send Consultation Request</button>
           <p class="form-note" data-form-note role="status"></p>
         </form>
       </section>
     </main>
 
     <footer class="site-footer site-footer--minimal">
-      <div class="footer-summary"><strong>Higher education, built for meaningful growth.</strong><span>Admissions strategy, institutional branding, leadership, and transformation.</span></div>
-      <nav aria-label="Footer navigation"><a href="#home">Home</a><a href="#experience">Experience</a><a href="#awards">Awards</a><a href="#media">Media</a><a href="about.html">About</a><a href="services.html">Services</a></nav>
-      <div class="footer-social"><a href="mailto:meetsuryamule@gmail.com"><i class="fa-solid fa-envelope" aria-hidden="true"></i>Email</a><a href="https://www.linkedin.com/in/dr-m-r-s-suryanarayana-reddy/" target="_blank" rel="noreferrer"><i class="fa-brands fa-linkedin" aria-hidden="true"></i>LinkedIn</a></div>
+      <div class="footer-company">
+        <img src="assets/faculty-careers-logo.jpg" alt="Faculty Careers, a unit of Learning Space Margadarshan Private Limited">
+        <div><span>Founder &amp; Director</span><strong>Learning Space Margadarshan Pvt. Ltd.</strong><p>Advancing faculty careers and institutional growth through strategy, leadership, and practical education consulting.</p></div>
+      </div>
+      <div class="footer-links"><span>Explore</span><nav aria-label="Footer navigation"><a href="#home">Home</a><a href="#experience">Experience</a><a href="#awards">Awards</a><a href="#media">Media</a><a href="about.html">About</a><a href="services.html">Services</a></nav></div>
+      <div class="footer-connect"><span>Connect</span><a href="mailto:meetsuryamule@gmail.com"><i class="fa-solid fa-envelope" aria-hidden="true"></i>meetsuryamule@gmail.com</a><a href="tel:+919652006074"><i class="fa-solid fa-phone" aria-hidden="true"></i>+91 96520 06074</a><a href="https://www.linkedin.com/in/dr-m-r-s-suryanarayana-reddy/" target="_blank" rel="noreferrer"><i class="fa-brands fa-linkedin" aria-hidden="true"></i>LinkedIn Profile</a></div>
       <p class="copyright">Copyright 2026 Dr. M.R.S. Suryanarayana Reddy. All rights reserved.</p>
     </footer>
 
@@ -643,6 +671,6 @@
       </svg>
     </button>
 
-    <script src="assets/app.js?v=20260716-2"></script>
+    <script src="assets/app.js?v=20260719-3"></script>
   </body>
 </html>

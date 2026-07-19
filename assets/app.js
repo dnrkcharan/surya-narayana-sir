@@ -437,16 +437,20 @@
       event.preventDefault();
       const form = new FormData(contactForm);
       const name = String(form.get("name") || "").trim();
+      const college = String(form.get("college") || "").trim();
       const email = String(form.get("email") || "").trim();
-      const subject = String(form.get("subject") || "Speaking invitation").trim();
+      const service = String(form.get("service") || "Consultation").trim();
       const message = String(form.get("message") || "").trim();
       const body = [
         `Name: ${name}`,
+        `College or institution: ${college}`,
         `Email: ${email}`,
+        `Service required: ${service}`,
         "",
         message,
       ].join("\n");
 
+      const subject = `Website enquiry: ${service}`;
       window.location.href = `mailto:meetsuryamule@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
       if (formNote) {

@@ -1,27 +1,26 @@
-**Findings**
-- No remaining P0/P1/P2 issues in the selected Option 2 chronology, recognition panel, media panel, or mobile navigation.
+# Design QA
 
-**Selected Visual Direction**
-- Product Design selection: Option 2, "Editorial Academic Chronicle."
-- The selected direction is preserved as a five-step chronological experience line, followed by a dark Awards & Recognitions panel and a separate light Interviews & Media panel.
+## Visual Reference
 
-**Implementation Evidence**
-- Mobile Experience and Awards: `/Users/apple/Documents/Sai sameer/surya-narayana-sir/qa/option-2-chronicle-mobile.png`
-- Desktop visual inspection: In-app Browser at 1440 x 1024, including the settled chronology, fully filled award panel, compact media list, and the resource sections directly below.
+- Selected Product Design direction: `/Users/apple/.codex/generated_images/019f2bdd-11f2-7950-8a28-a3035ad59a6f/exec-a9f237f2-fe64-4a67-a3a1-13342492fc05.png`
+- Desktop implementation capture: `/private/tmp/services-option2-desktop-final.png`
+- Mobile implementation capture: `/private/tmp/services-option2-mobile.png`
+- Mobile awards verification: `/private/tmp/mobile-awards-fresh.png`
 
-**Focused Region Checks**
-- Experience preserves the original sequence and exact role content: BVRIT, Mohan Babu University, IARE, KG Reddy College, then Vishwa Vishwani Institute of Systems & Management.
-- Every desktop chronology step places the institution mark first, date on the shared rail, and role title below; there are no empty card zones.
-- On mobile, the same five steps remain in order as a compact vertical timeline with an institution tile on the left and date and role on the right.
-- Awards & Recognitions is a dedicated navy editorial panel with four balanced visual awards that fill the available height.
-- Interviews & Media remains a distinct light panel with the primary interview followed by two compact, scannable media entries.
-- The following resource grid begins immediately after the recognition and media panels; no unintended vertical gap remains.
+## Verified States
 
-**Interaction And Quality Checks**
-- Desktop horizontal overflow: 0 at 1440 x 1024.
-- Mobile horizontal overflow: 0 at 390 x 844.
-- Mobile menu: visible as a fixed panel beginning 72px below the sticky header; five navigation targets are available after deep scrolling.
-- Mobile menu accessibility: the control updates from `Open navigation` to `Close navigation` and sets `aria-expanded="true"` when open.
-- `npm run build`, `node --check assets/app.js`, and `git diff --check` passed.
+- Services page at 1440 x 1000: 11 existing services retained, two-column editorial grid, no clipped text, no broken images, and no horizontal overflow.
+- Services page at 390 x 844: single-column cards, stable card dimensions, working mobile navigation, and no horizontal overflow.
+- Home page at 1440 px: hero, about, experience, awards, media, milestones, publications, testimonials, contact, and footer alignment reviewed.
+- Home page at 390 px: two-line hero name, stacked experience layout, corrected awards text flow, working navigation, and no horizontal overflow.
+- About page at desktop and mobile widths: no overflow, broken images, or oversized layout elements.
 
-final result: passed
+## Fidelity Notes
+
+- The selected dark institutional design direction is implemented with full-background campus imagery, navy information panels, orange numbering, and concise editorial spacing.
+- Existing portfolio content is preserved instead of copying placeholder text from the design reference.
+- The existing site navbar structure and ordering remain unchanged.
+
+## Result
+
+No remaining P0, P1, or P2 visual issues were found in the checked states.
