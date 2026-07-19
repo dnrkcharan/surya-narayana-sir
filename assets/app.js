@@ -433,28 +433,58 @@
   const formNote = document.querySelector("[data-form-note]");
 
   if (contactForm) {
-    contactForm.addEventListener("submit", (event) => {
+    const serviceField = contactForm.querySelector('select[name="service"]');
+    const requestedService = new URLSearchParams(window.location.search).get("service");
+
+    if (serviceField && requestedService) {
+      const matchingOption = Array.from(serviceField.options).find(
+        (option) => option.textContent.trim() === requestedService.trim()
+      );
+      if (matchingOption) {
+        serviceField.value = matchingOption.value;
+      }
+    }
+
+    contactForm.addEventListener("submit", async (event) => {
       event.preventDefault();
-      const form = new FormData(contactForm);
-      const name = String(form.get("name") || "").trim();
-      const college = String(form.get("college") || "").trim();
-      const email = String(form.get("email") || "").trim();
-      const service = String(form.get("service") || "Consultation").trim();
-      const message = String(form.get("message") || "").trim();
-      const body = [
-        `Name: ${name}`,
-        `College or institution: ${college}`,
-        `Email: ${email}`,
-        `Service required: ${service}`,
-        "",
-        message,
-      ].join("\n");
+      const submitButton = contactForm.querySelector('button[type="submit"]');
+      const submitLabel = submitButton?.querySelector("span");
+      const endpoint = contactForm.dataset.formEndpoint;
 
-      const subject = `Website enquiry: ${service}`;
-      window.location.href = `mailto:meetsuryamule@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      if (!endpoint) {
+        contactForm.submit();
+        return;
+      }
 
+      if (submitButton) submitButton.disabled = true;
+      if (submitLabel) submitLabel.textContent = "Sending Request...";
       if (formNote) {
-        formNote.textContent = "Opening your email app with this message addressed to Dr. Reddy.";
+        formNote.className = "form-note";
+        formNote.textContent = "Sending your request securely...";
+      }
+
+      try {
+        const response = await fetch(endpoint, {
+          method: "POST",
+          body: new FormData(contactForm),
+          headers: { Accept: "application/json" },
+        });
+
+        if (!response.ok) throw new Error("Form submission failed");
+
+        contactForm.reset();
+        if (formNote) {
+          formNote.className = "form-note is-success";
+          formNote.textContent = "Thank you. Your request has been sent to Dr. Reddy.";
+        }
+      } catch (error) {
+        if (formNote) {
+          formNote.className = "form-note is-error";
+          formNote.textContent = "We could not send the request. Please try again in a moment.";
+        }
+      } finally {
+        if (submitButton) submitButton.disabled = false;
+        if (submitLabel) submitLabel.textContent = "Send Consultation Request";
       }
     });
   }
