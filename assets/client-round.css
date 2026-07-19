@@ -751,6 +751,40 @@ body.modal-open { overflow: hidden; }
   border-top: 6px solid var(--accent);
 }
 
+.publication-list {
+  border-top: 1px solid #dbe7f1;
+  gap: 0;
+}
+
+.publication-list li {
+  align-items: start;
+  border-bottom: 1px solid #e5edf4;
+  padding: 14px 0;
+}
+
+.publication-list > li > span {
+  align-items: center;
+  background: #eaf5fc;
+  border: 1px solid #bfdeee;
+  color: #0b6f9f;
+  display: inline-flex;
+  font-size: 0.68rem;
+  font-weight: 900;
+  height: 34px;
+  justify-content: center;
+}
+
+.publication-list strong {
+  font-size: 0.86rem;
+  line-height: 1.38;
+}
+
+.publication-list small {
+  display: block;
+  line-height: 1.45;
+  margin-top: 4px;
+}
+
 @media (max-width: 900px) {
   .milestone-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .site-footer.site-footer--minimal { grid-template-columns: 1fr 1fr; }
