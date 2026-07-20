@@ -2434,3 +2434,249 @@ body.modal-open { overflow: hidden; }
     min-height: 148px;
   }
 }
+
+/* 20260720 content-panel refinement: equal cards with contained reading areas. */
+.experience-section .section-heading {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.experience-section .section-heading h2 {
+  color: var(--accent-deep);
+  font-family: var(--font-display);
+  font-size: 1.42rem;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.experience-section .section-heading::after {
+  background: var(--line);
+  content: "";
+  flex: 1;
+  height: 1px;
+}
+
+.resource-grid--academic,
+.insights-grid--editorial {
+  align-items: stretch;
+  gap: 20px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.resource-grid--academic .resource-column,
+.insights-grid--editorial .resource-column {
+  border-radius: 6px;
+  box-sizing: border-box;
+  height: 430px;
+  min-height: 430px;
+  padding: 22px;
+}
+
+.resource-grid--academic .resource-column .card-topline,
+.insights-grid--editorial .resource-column .card-topline {
+  align-items: flex-start;
+  border-bottom: 1px solid var(--line);
+  flex: 0 0 auto;
+  margin-bottom: 16px;
+  min-height: 39px;
+  padding-bottom: 12px;
+}
+
+.resource-grid--academic .resource-column .card-topline h2,
+.insights-grid--editorial .resource-column .card-topline h2 {
+  font-family: var(--font-display);
+  font-size: 1.32rem;
+  line-height: 1.12;
+  text-transform: none;
+}
+
+.resource-grid--academic .resource-column .card-topline a,
+.insights-grid--editorial .resource-column .card-topline a {
+  color: var(--accent-deep);
+  font-size: 0.72rem;
+  line-height: 1.3;
+  text-align: right;
+  white-space: normal;
+}
+
+.resource-scroll,
+.panel-member-scroll {
+  flex: 1 1 auto;
+  min-height: 0;
+  max-height: 300px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-right: 10px;
+  scrollbar-color: var(--accent) var(--accent-soft);
+  scrollbar-width: thin;
+}
+
+.resource-scroll::-webkit-scrollbar,
+.panel-member-scroll::-webkit-scrollbar { width: 8px; }
+
+.resource-scroll::-webkit-scrollbar-track,
+.panel-member-scroll::-webkit-scrollbar-track { background: var(--accent-soft); border-radius: 8px; }
+
+.resource-scroll::-webkit-scrollbar-thumb,
+.panel-member-scroll::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 8px; }
+
+.resource-scroll > .document-list,
+.resource-scroll > .article-link-list { min-height: 0; }
+
+.resource-grid--academic .document-list {
+  gap: 0;
+}
+
+.resource-grid--academic .document-list li {
+  grid-template-columns: 44px minmax(0, 1fr);
+  min-height: 86px;
+  padding: 13px 0;
+}
+
+.resource-grid--academic .document-list li:first-child { padding-top: 2px; }
+
+.resource-grid--academic .document-list li:last-child { padding-bottom: 2px; }
+
+.resource-grid--academic .document-list > li > span.resource-icon {
+  align-items: center;
+  background: var(--accent-soft);
+  border: 1px solid rgba(44, 132, 189, 0.22);
+  border-radius: 10px;
+  color: var(--accent-deep);
+  display: inline-flex;
+  font-size: 0.98rem;
+  height: 42px;
+  justify-content: center;
+  width: 42px;
+}
+
+.resource-grid--academic .document-list > li > span.resource-icon i { margin: 0; }
+
+.resource-grid--academic .document-list strong {
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+
+.resource-grid--academic .document-list small {
+  display: block;
+  font-size: 0.72rem;
+  line-height: 1.45;
+  margin-top: 5px;
+}
+
+.publication-list li { border-bottom: 1px solid #e5edf4; }
+
+.publication-list li:first-child { border-top: 0; }
+
+.insights-grid--editorial .article-link-list {
+  gap: 0;
+  margin-top: 0;
+}
+
+.insights-grid--editorial .article-link-list li { min-height: 92px; }
+
+.insights-grid--editorial .article-link-list a {
+  padding: 13px 0;
+}
+
+.insights-grid--editorial .article-link-list li:first-child a { padding-top: 2px; }
+
+.insights-grid--editorial .article-link-list li:last-child a { padding-bottom: 2px; }
+
+.panel-member-scroll .panel-member-feature {
+  margin-top: 0;
+}
+
+.panel-member-scroll .panel-event-link { margin-bottom: 4px; }
+
+.panel-member-column .panel-member-feature img { aspect-ratio: 16 / 10; }
+
+.about-brief {
+  align-items: start;
+  gap: clamp(32px, 4vw, 64px);
+  grid-template-columns: minmax(0, 1.16fr) minmax(300px, 0.84fr);
+  min-height: calc(100vh - 150px);
+  padding-bottom: clamp(48px, 7vw, 84px);
+  padding-top: clamp(92px, 9vw, 126px);
+}
+
+.about-brief h1 {
+  font-size: clamp(2rem, 2.75vw, 2.85rem);
+  line-height: 1.06;
+  margin: 8px 0 24px;
+}
+
+.about-brief h1 span { display: block; }
+
+.about-brief-copy > p:not(.section-kicker) {
+  font-size: 0.94rem;
+  line-height: 1.6;
+  margin-bottom: 13px;
+}
+
+.about-brief-portrait {
+  aspect-ratio: 0.78;
+  border: 1px solid var(--line);
+  min-height: 0;
+}
+
+.about-brief-portrait img {
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+@media (max-width: 900px) {
+  .resource-grid--academic,
+  .insights-grid--editorial { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 700px) {
+  .resource-grid--academic .resource-column,
+  .insights-grid--editorial .resource-column {
+    height: 430px;
+    min-height: 430px;
+    padding: 20px;
+  }
+
+  .resource-grid--academic .resource-column .card-topline,
+  .insights-grid--editorial .resource-column .card-topline {
+    min-height: 36px;
+  }
+
+  .resource-grid--academic .resource-column .card-topline h2,
+  .insights-grid--editorial .resource-column .card-topline h2 { font-size: 1.22rem; }
+
+  .resource-scroll,
+  .panel-member-scroll {
+    max-height: 280px;
+    padding-right: 8px;
+  }
+
+  .experience-section .section-heading { margin-bottom: 14px; }
+
+  .about-brief {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .about-brief h1 {
+    font-size: clamp(1.5rem, 6.2vw, 2.2rem);
+    line-height: 1.08;
+  }
+
+  .about-brief h1 span { display: inline; }
+
+  .about-brief-copy > p:not(.section-kicker) {
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+
+  .about-brief-portrait {
+    justify-self: center;
+    max-width: 360px;
+    width: 100%;
+  }
+}
