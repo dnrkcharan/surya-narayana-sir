@@ -3206,3 +3206,86 @@ body.modal-open { overflow: hidden; }
 
   .milestones-section .card-topline h2 { font-size: 1.48rem !important; }
 }
+
+/* 20260722 compact the evidence-led awards gallery without losing emphasis. */
+.awards-section .awards-panel {
+  padding: 22px 24px 24px;
+}
+
+.awards-section .award-grid {
+  gap: 12px;
+  padding-bottom: 4px;
+}
+
+.awards-section .award-card,
+.awards-section .award-card--pending {
+  border-top: 3px solid var(--accent);
+  min-height: 0;
+}
+
+.awards-section .award-card-trigger,
+.awards-section .award-card--pending .award-card-trigger {
+  align-content: start;
+  gap: 6px;
+  grid-template-rows: 148px auto auto auto;
+  height: auto;
+  min-height: 0;
+  padding: 10px;
+}
+
+.awards-section .award-card .award-visual,
+.awards-section .award-card--pending .award-icon {
+  height: 148px;
+  min-height: 148px !important;
+}
+
+.awards-section .award-card h3 {
+  font-size: 0.81rem;
+  line-height: 1.28;
+}
+
+.awards-section .award-card p {
+  align-self: start;
+  font-size: 0.7rem;
+  line-height: 1.34;
+}
+
+.awards-section .award-card-trigger > span:last-child {
+  align-items: center;
+  align-self: start;
+  display: inline-flex;
+  font-size: 0.73rem;
+  gap: 6px;
+}
+
+.awards-section .award-card-trigger > span:last-child::after {
+  content: "\f061";
+  font-family: "Font Awesome 6 Free";
+  font-size: 0.68em;
+  font-weight: 900;
+}
+
+@media (max-width: 700px) {
+  .awards-section .awards-panel { padding: 18px 14px 20px; }
+
+  .awards-section .award-grid { gap: 10px; }
+
+  .awards-section .award-card,
+  .awards-section .award-card--pending { min-height: 0; }
+
+  .awards-section .award-card-trigger,
+  .awards-section .award-card--pending .award-card-trigger {
+    gap: 5px;
+    grid-template-rows: 120px auto auto auto;
+    padding: 9px;
+  }
+
+  .awards-section .award-card .award-visual,
+  .awards-section .award-card--pending .award-icon {
+    height: 120px;
+    min-height: 120px !important;
+  }
+
+  .awards-section .award-card h3 { font-size: 0.78rem; }
+  .awards-section .award-card p { font-size: 0.68rem; }
+}
